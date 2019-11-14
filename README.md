@@ -1,21 +1,21 @@
-# Testerra Skeleton
+# Testerra Skeletons
 
-This is a skeleton project for Testerra.
+Contains project skeletons for the Testerra Test Automation Framework.
 
-## Prerequisits
+## Prerequisites
 
 ### Setup for existing Selenium environment
 
-You need to configure your Selenium environement in `test.properties`
+You need to configure your existing Selenium environement in `test.properties`
 ```shell script
 # Selenium environment
 tt.selenium.server.url=http://[selenium-host]:[port]
 #tt.webdriver.mode=local
 ```
 
-### Install local Selenium environment
+### Or setup local Selenium environment
 
-Or install the following components into your environment.
+Install the following components into your environment.
 
 #### On Windows using Chocolately
 ```shell script
