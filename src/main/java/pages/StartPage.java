@@ -3,6 +3,7 @@ package pages;
 import eu.tsystems.mms.tic.testframework.pageobjects.IGuiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class StartPage extends Page {
@@ -13,9 +14,23 @@ public class StartPage extends Page {
         super(driver);
     }
 
-    public ResultPage search(String string) {
-        searchField.type(string);
+    public StartPage type(String string) {
+        searchField.clear().sendKeys(string);
+        return this;
+    }
+
+    public ResultPage searchByEnter() {
+        searchField.sendKeys(Keys.ENTER);
+        return createPage(ResultPage.class);
+    }
+
+    public ResultPage searchByDefaultButton() {
         searchBtn.click();
+        return createPage(ResultPage.class);
+    }
+
+    public ResultPage searchLucky() {
+        find(By.className("RNmpXc")).click();
         return createPage(ResultPage.class);
     }
 }
