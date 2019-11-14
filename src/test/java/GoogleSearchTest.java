@@ -6,7 +6,7 @@ import pages.StartPage;
 
 public class GoogleSearchTest extends TesterraTest {
 
-    StartPage startPage;
+    private StartPage startPage;
 
     @BeforeClass
     private void prepare() {
