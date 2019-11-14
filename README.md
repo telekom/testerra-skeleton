@@ -1,10 +1,10 @@
 # Testerra Skeleton
 
-This is a skeleton project for Testerra implements.
+This is a skeleton project for Testerra.
 
 ## Prerequisits
 
-### Setup for existing Selenium Environment
+### Setup for existing Selenium environment
 
 You need to configure your Selenium environement in `test.properties`
 ```shell script
@@ -13,21 +13,21 @@ tt.selenium.server.url=http://[selenium-host]:[port]
 #tt.webdriver.mode=local
 ```
 
-### Install local Selenium Environment
+### Install local Selenium environment
 
-Or install the following components into your environment
+Or install the following components into your environment.
 
-### On Windows using Chocolately
+#### On Windows using Chocolately
 ```shell script
 choco install chromium chromedriver
 ```
 
-### On Debian/Ubuntu
+#### On Debian/Ubuntu
 ```shell script
 apt-get install chromium-browser chromium-chromedriver
 ```
 
-### On MacOSX (tdb)
+#### On MacOSX (tdb)
 ```shell script
 brew install
 ```
@@ -38,4 +38,4 @@ gradle test -Peverything
 ```
 
 ## View test results
-Open `testerra-report/index.html` in a Browser of your choice.
+Open `testerra-report/index.html` in an evergreen browser.
