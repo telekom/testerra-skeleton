@@ -5,7 +5,10 @@ plugins {
 group 'eu.tsystems.mms.tic.testerra'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = "UTF-8"
+
+targetCompatibility = 1.8
 
 dependencies {
     implementation 'eu.tsystems.mms.tic.testerra:driver-ui-desktop:1-SNAPSHOT'
