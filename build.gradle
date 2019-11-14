@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'eu.tsystems.mms.tic.testerra'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+dependencies {
+    implementation 'eu.tsystems.mms.tic.testerra:driver-ui-desktop:1-SNAPSHOT'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
