@@ -16,6 +16,6 @@ public class StartPage extends Page {
     public ResultPage search(String string) {
         searchField.type(string);
         searchBtn.click();
-        return pageFactory.createPage(ResultPage.class);
+        return createPage(ResultPage.class);
     }
 }
