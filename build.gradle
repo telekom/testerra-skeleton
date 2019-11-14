@@ -15,3 +15,40 @@ repositories {
     mavenLocal()
     mavenCentral()
 }
+
+
+test {
+    // define as
+    //      key: profile name
+    //      value: testng suite xml filename
+    def profiles = [
+            "everything": "Everything.xml"
+    ]
+
+    /*
+    create suite def
+     */
+    def suiteFiles = []
+    profiles.each { k, v ->
+        if (project.hasProperty("" + k)) {
+            def f = 'src/test/resources/TestSuites/' + v
+            suiteFiles << f
+        }
+    }
+
+    useTestNG() {
+        suites(suiteFiles as String[])
+    }
+
+    testLogging {
+        outputs.upToDateWhen { false }
+        showStandardStreams = true
+    }
+
+    options {
+        systemProperties(System.getProperties())
+    }
+
+    // basically execution returns "GREEN" (framework exits with exit code > 0 if there were failures)
+    ignoreFailures = true
+}
