@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'eu.tsystems.mms.tic.testerra'
+group 'eu.tsystems.mms.tic.testerra.skeletons'
 version '1.0-SNAPSHOT'
 
 compileJava.options.encoding = 'UTF-8'
@@ -11,7 +11,7 @@ compileTestJava.options.encoding = "UTF-8"
 targetCompatibility = 1.8
 
 dependencies {
-    implementation 'eu.tsystems.mms.tic.testerra:driver-ui-desktop:1-SNAPSHOT'
+    implementation 'eu.tsystems.mms.tic.testerra:core:1-SNAPSHOT'
 }
 
 repositories {
@@ -34,7 +34,7 @@ test {
     def suiteFiles = []
     profiles.each { k, v ->
         if (project.hasProperty("" + k)) {
-            def f = 'src/test/resources/TestSuites/' + v
+            def f = 'TestSuites/' + v
             suiteFiles << f
         }
     }

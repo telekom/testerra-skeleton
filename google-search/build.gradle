@@ -1,0 +1,3 @@
+dependencies {
+    implementation 'eu.tsystems.mms.tic.testerra:driver-ui-desktop:1-SNAPSHOT'
+}

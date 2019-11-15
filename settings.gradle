@@ -1,2 +1,3 @@
 rootProject.name = 'testerra-skeletons'
+include "google-search"
 
