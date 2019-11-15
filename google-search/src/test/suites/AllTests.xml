@@ -3,7 +3,7 @@
 <suite name="GoogleSearch" parallel="methods" thread-count="20">
     <test name="Basics">
         <classes>
-            <class name="GoogleSearchTest"></class>
+            <class name="test.GoogleSearchTest"></class>
         </classes>
     </test>
 </suite>

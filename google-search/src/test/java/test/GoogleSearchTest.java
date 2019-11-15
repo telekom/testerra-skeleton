@@ -1,3 +1,5 @@
+package test;
+
 import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

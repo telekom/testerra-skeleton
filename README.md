@@ -32,7 +32,7 @@ apt-get install chromium-browser chromium-chromedriver
 brew install
 ```
 
-## Run the tests
+## Run the tests (tbd)
 ```shell script
 gradle test -Peverything
 ```
