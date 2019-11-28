@@ -18,7 +18,7 @@ public class GoogleSearchTest extends TesterraTest {
     @Test
     public void test_Search() {
         ResultPage resultPage = startPage.type("testerra").searchByEnter();
-        resultPage.result(1).headline().text().contains("Testerra");
+        resultPage.result().firstElement().headline().text().contains("Testerra");
     }
 
 }
