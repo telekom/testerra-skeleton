@@ -14,18 +14,12 @@ dependencies {
     implementation 'eu.tsystems.mms.tic.testerra:core:1-SNAPSHOT'
 }
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
-
 test {
     // define as
     //      key: profile name
     //      value: testng suite xml filename
     def profiles = [
-            "everything": "Everything.xml"
+            "all": "AllTests.xml"
     ]
 
     /*
@@ -34,10 +28,12 @@ test {
     def suiteFiles = []
     profiles.each { k, v ->
         if (project.hasProperty("" + k)) {
-            def f = 'TestSuites/' + v
+            def f = 'src/test/suites/resources/' + v
             suiteFiles << f
         }
     }
+
+    print suiteFiles
 
     useTestNG() {
         suites(suiteFiles as String[])

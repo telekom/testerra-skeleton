@@ -1,3 +1,5 @@
 rootProject.name = 'testerra-skeletons'
 include "google-search"
 include "inject-factories"
+// Add this for local development
+//includeBuild "../testerra"
