@@ -1,4 +1,4 @@
 dependencies {
     compile project(':google-search')
-    implementation 'eu.tsystems.mms.tic.testerra:driver-ui-desktop:1-SNAPSHOT'
+    implementation group: 'eu.tsystems.mms.tic.testerra', name: 'driver-ui-desktop', version: testerraVersion
 }

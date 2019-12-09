@@ -4,6 +4,9 @@ plugins {
 
 group 'eu.tsystems.mms.tic.testerra.skeletons'
 version '1.0-SNAPSHOT'
+ext {
+    testerraVersion = '2-SNAPSHOT'
+}
 
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
@@ -11,7 +14,7 @@ compileTestJava.options.encoding = "UTF-8"
 targetCompatibility = 1.8
 
 dependencies {
-    implementation 'eu.tsystems.mms.tic.testerra:core:1-SNAPSHOT'
+    implementation group: 'eu.tsystems.mms.tic.testerra', name: 'core', version: testerraVersion
 }
 
 test {
