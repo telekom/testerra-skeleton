@@ -8,13 +8,20 @@ ext {
     testerraVersion = '2-SNAPSHOT'
 }
 
-compileJava.options.encoding = 'UTF-8'
-compileTestJava.options.encoding = "UTF-8"
+allprojects {
 
-targetCompatibility = 1.8
+    repositories {
+        mavenLocal()
+    }
 
-dependencies {
-    implementation group: 'eu.tsystems.mms.tic.testerra', name: 'core', version: testerraVersion
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = "UTF-8"
+
+    sourceCompatibility = 11
+
+    dependencies {
+        implementation group: 'eu.tsystems.mms.tic.testerra', name: 'core', version: testerraVersion
+    }
 }
 
 test {
