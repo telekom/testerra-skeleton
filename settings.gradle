@@ -1,5 +1,5 @@
 rootProject.name = 'testerra-skeletons'
-include "google-search"
+include "page-objects"
 include "inject-factories"
 // Add this for local development
 //includeBuild "../testerra"
