@@ -2,7 +2,7 @@ package pages;
 
 import components.ResultItem;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
-import org.openqa.selenium.By;
+import eu.tsystems.mms.tic.testframework.pageobjects.XPath;
 import org.openqa.selenium.WebDriver;
 
 public class ResultPage extends Page {
@@ -11,6 +11,6 @@ public class ResultPage extends Page {
     }
 
     public ResultItem result() {
-        return createComponent(ResultItem.class, find(By.xpath("//div[@class='rc']")));
+        return createComponent(ResultItem.class, findByXPath(XPath.from("div").classNames("rc")));
     }
 }

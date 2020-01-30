@@ -12,7 +12,7 @@ public class GoogleSearchTest implements PageObjectCreator {
 
     @Test(invocationCount = 1, threadPoolSize = 1)
     public void test_Search() {
-        StartPage startPage = PAGE_FACTORY.createPage(StartPage.class);
+        StartPage startPage = pageFactory.createPage(StartPage.class);
         ResultPage resultPage = startPage.type("testerra").searchByEnter();
         resultPage.result().list().first().headline().text().contains("Testerra");
     }
