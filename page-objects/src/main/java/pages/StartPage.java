@@ -15,7 +15,7 @@ public class StartPage extends Page {
     }
 
     public StartPage type(String string) {
-        searchField.clear().sendKeys(string);
+        searchField.type(string);
         return this;
     }
 

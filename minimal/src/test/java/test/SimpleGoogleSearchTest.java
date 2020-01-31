@@ -13,7 +13,7 @@ public class SimpleGoogleSearchTest implements UiElementCreator {
 
     @Test()
     public void test_Search() {
-        find(By.name("q")).clear().sendKeys("Hallo World");
+        find(By.name("q")).type("Hallo World");
         find(By.name("btnK")).click();
     }
 
