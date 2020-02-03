@@ -9,5 +9,4 @@ public class FactoriesTest extends TesterraTest {
     public void test_PageFactory() {
         Assert.assertTrue(pageFactory instanceof MyPageFactory);
     }
-
 }
