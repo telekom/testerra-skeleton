@@ -2,5 +2,6 @@ rootProject.name = 'testerra-skeletons'
 include "minimal"
 include "page-objects"
 include "inject-factories"
+include "layout-check"
 // Add this for local development
 //includeBuild "../testerra"
