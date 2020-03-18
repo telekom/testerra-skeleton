@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" verbose="1" thread-count="10" configfailurepolicy="continue" parallel="false">
+    <test name="Test1" parallel="methods">
+        <classes>
+            <class name="ttmaven.ExampleTest"/>
+        </classes>
+    </test>
+</suite>
