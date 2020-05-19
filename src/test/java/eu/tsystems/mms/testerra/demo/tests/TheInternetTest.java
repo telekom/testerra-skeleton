@@ -65,7 +65,6 @@ public class TheInternetTest extends TesterraTest {
     }
 
     @Test
-    @FailureCorridor.Low
     public void testT01_DoDragAndDrop() {
 
         final WebDriver driver = WebDriverManager.getWebDriver();
@@ -139,6 +138,7 @@ public class TheInternetTest extends TesterraTest {
 
     @Test
     @Fails(ticketId = 1, description = "Will fail because user does not exist")
+    @FailureCorridor.Low
     public void testT04_TableEntryNotPresent() {
 
         final UserModel userNonExisting = userModelFactory.createNonExisting();
