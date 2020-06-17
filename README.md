@@ -6,7 +6,8 @@ For simplicity, we will use Maven as build and dependency management tool.
 
 ## Perquisites
 
-Follow the instructions for [getting started](https://tapas-docs.s3.eu-central-1.amazonaws.com/testerra/latest/index.html#_getting_started).
+This project is an implementation of the [getting started](https://tapas-docs.s3.eu-central-1.amazonaws.com/testerra/latest/index.html#_getting_started) tutorial.
+All you have to do is, to setup an [own selenium server](https://tapas-docs.s3.eu-central-1.amazonaws.com/testerra/latest/index.html#_setup_selenium)
 
 ## Demo App
 For sample page objects and easy testcases we use https://the-internet.herokuapp.com/ as base url for testing.
