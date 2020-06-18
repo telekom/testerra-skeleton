@@ -14,9 +14,9 @@ For sample page objects and easy testcases we use https://the-internet.herokuapp
 
 ## Execution
 You can simply execute the provided tests for the demo app by running following Maven command.
-````shell script
+```bash
 mvn test -PmySuite
-````
+```
 This will execute four simple tests in parallel mode for demonstrating you, how to use basic components of Testerra. You can see a list of features below.
 
 ## What this skeleton project offers you
