@@ -5,20 +5,18 @@ file and directory structure and common best practices to getting you and your p
 For simplicity, we will use Maven as build and dependency management tool. 
 
 ## Perquisites
-Please ensure you have the following things configured on your local environment:
-* JDK 8+
-* Maven
-* Google Chrome Browser
-* chromedriver stored in `$PATH` environment variable
+
+This project is an implementation of the [getting started](https://tapas-docs.s3.eu-central-1.amazonaws.com/testerra/latest/index.html#_getting_started) tutorial.
+All you have to do is, to setup an [own selenium server](https://tapas-docs.s3.eu-central-1.amazonaws.com/testerra/latest/index.html#_setup_selenium)
 
 ## Demo App
 For sample page objects and easy testcases we use https://the-internet.herokuapp.com/ as base url for testing.
 
 ## Execution
 You can simply execute the provided tests for the demo app by running following Maven command.
-````bash
-mvn clean test -PmySuite
-````
+```bash
+mvn test -PmySuite
+```
 This will execute four simple tests in parallel mode for demonstrating you, how to use basic components of Testerra. You can see a list of features below.
 
 ## What this skeleton project offers you
