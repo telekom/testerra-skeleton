@@ -26,11 +26,6 @@
             <name>Testerra</name>
             <url>https://dl.bintray.com/testerra-io/Testerra</url>
         </repository>
-        <repository>
-            <id>testng</id>
-            <name>testng</name>
-            <url>https://dl.bintray.com/cbeust/maven/</url>
-        </repository>
     </repositories>
 
     <dependencies>
