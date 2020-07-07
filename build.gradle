@@ -1,0 +1,59 @@
+apply plugin: 'java'
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = "UTF-8"
+
+repositories {
+    maven {
+        url  "https://dl.bintray.com/testerra-io/Testerra"
+    }
+    jcenter()
+    //mavenLocal()
+}
+
+dependencies {
+    implementation 'eu.tsystems.mms.tic.testerra:driver-ui-desktop:1.0-RC-3'
+}
+
+test {
+    // define as
+    //      key: profile name
+    //      value: testng suite xml filename
+    def profiles = [
+            "mySuite": "suite.xml",
+    ]
+
+    /*
+    create suite def
+     */
+    def suiteFiles = []
+    profiles.each { k, v ->
+        if (project.hasProperty("" + k)) {
+            def f = 'src/test/resources/' + v
+            suiteFiles << f
+        }
+    }
+
+    /*if (suiteFiles.size() == 0) {
+        throw new Exception("No Suites defined, run gradle test with -P[suite], available suites are: " + profiles)
+    }
+    else {
+        println "Suites: " + suiteFiles
+    }*/
+
+    useTestNG() {
+        suites(suiteFiles as String[])
+    }
+
+    testLogging {
+        outputs.upToDateWhen { false }
+        showStandardStreams = true
+    }
+
+    options {
+        systemProperties(System.getProperties())
+    }
+
+    // basically execution returns "GREEN" (framework exits with exit code > 0 if there were failures)
+    ignoreFailures = true
+}
