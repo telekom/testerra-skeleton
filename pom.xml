@@ -32,7 +32,7 @@
         <dependency>
             <groupId>eu.tsystems.mms.tic.testerra</groupId>
             <artifactId>driver-ui-desktop</artifactId>
-            <version>1.0-RC1</version>
+            <version>1.0-RC-2</version>
         </dependency>
 
         <dependency>
