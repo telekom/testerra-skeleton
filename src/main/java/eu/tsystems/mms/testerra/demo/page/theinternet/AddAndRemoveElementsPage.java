@@ -23,6 +23,7 @@ import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.Locate;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
 import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -36,13 +37,13 @@ import org.openqa.selenium.WebDriver;
 public class AddAndRemoveElementsPage extends Page {
 
     @Check
-    private GuiElement buttonAddElement = new GuiElement(this.getWebDriver(), Locate.by().xpath("//button[text()='" + Localization.BUTTON_ADD_ELEMENT + "']"));
+    private GuiElement buttonAddElement = new GuiElement(this.getWebDriver(), Locate.by(By.xpath("//button[text()='" + Localization.BUTTON_ADD_ELEMENT + "']")));
 
     @Check
-    private GuiElement sectionElements = new GuiElement(this.getWebDriver(), Locate.by().id("elements"));
+    private GuiElement sectionElements = new GuiElement(this.getWebDriver(), Locate.by(By.id("elements")));
 
     // No Check here, because on initial load, list is empty.
-    private GuiElement deleteElementButtonList = sectionElements.getSubElement(Locate.by().xpath("//button[text()='" + Localization.BUTTON_DELETE + "']"));
+    private GuiElement deleteElementButtonList = sectionElements.getSubElement(Locate.by(By.xpath("//button[text()='" + Localization.BUTTON_DELETE + "']")));
 
     /**
      * Constructor for existing sessions.

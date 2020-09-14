@@ -24,6 +24,7 @@ import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.Locate;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
 import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
@@ -44,8 +45,8 @@ public class TablePage extends Page {
     private FooterPartialPage footer = PageFactory.create(FooterPartialPage.class, this.getWebDriver());
 
     @Check
-    private GuiElement tableOne = new GuiElement(this.getWebDriver(), Locate.by().id("table1"));
-    private GuiElement tableOneHeader = tableOne.getSubElement(Locate.by().className("header"));
+    private GuiElement tableOne = new GuiElement(this.getWebDriver(), Locate.by(By.id("table1")));
+    private GuiElement tableOneHeader = tableOne.getSubElement(Locate.by(By.className("header")));
 
     public TablePage(WebDriver driver) {
         super(driver);
@@ -69,7 +70,6 @@ public class TablePage extends Page {
         return PageFactory.create(TablePage.class, this.getWebDriver());
     }
 
-
     public HashMap<String, String> getRowDataByIndex(int row) {
 
         final HashMap<String, String> result = new HashMap<>();
@@ -78,7 +78,7 @@ public class TablePage extends Page {
         final GuiElement tableRow = this.getTableRows().get(row);
 
         for (int i = 0; i < availAbleColumnNames.size(); i++) {
-            final GuiElement tdElement = tableRow.getSubElement(Locate.by().cssSelector("td")).getList().get(i);
+            final GuiElement tdElement = tableRow.getSubElement(Locate.by(By.cssSelector("td"))).getList().get(i);
             result.put(availAbleColumnNames.get(i), tdElement.getText());
         }
 
@@ -90,16 +90,16 @@ public class TablePage extends Page {
         int indexLastName = getIndexOfColumn("Last Name");
         int indexFirstName = getIndexOfColumn("First Name");
         final GuiElement filteredDataRow = tableOne.getSubElement(
-                Locate.by().xpath(".//tr" +
+                Locate.by(By.xpath(".//tr" +
                         "//td[" + indexLastName + "][text()='" + user.getLastName() + "']/.." +
-                        "//td[" + indexFirstName + "][text()='" + user.getFirstName() + "']/.."));
+                        "//td[" + indexFirstName + "][text()='" + user.getFirstName() + "']/..")));
 
         return filteredDataRow.isDisplayed();
     }
 
     private List<GuiElement> getTableRows() {
 
-        return tableOne.getSubElement(Locate.by().xpath(".//tr")).getList();
+        return tableOne.getSubElement(Locate.by(By.xpath(".//tr"))).getList();
     }
 
     private int getIndexOfColumn(final String column) {

@@ -24,6 +24,7 @@ import eu.tsystems.mms.tic.testframework.pageobjects.Locate;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
 import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
 import eu.tsystems.mms.tic.testframework.utils.MouseActions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -39,9 +40,9 @@ public class DragAndDropPage extends Page {
     private FooterPartialPage footer = PageFactory.create(FooterPartialPage.class, this.getWebDriver());
 
     @Check
-    private GuiElement columnAWrapper = new GuiElement(this.getWebDriver(), Locate.by().id("column-a"));
+    private GuiElement columnAWrapper = new GuiElement(this.getWebDriver(), Locate.by(By.id("column-a")));
     @Check
-    private GuiElement columnBWrapper = new GuiElement(this.getWebDriver(), Locate.by().id("column-b"));
+    private GuiElement columnBWrapper = new GuiElement(this.getWebDriver(), Locate.by(By.id("column-b")));
 
     public DragAndDropPage(WebDriver driver) {
         super(driver);
