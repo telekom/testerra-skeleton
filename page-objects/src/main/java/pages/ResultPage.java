@@ -11,6 +11,6 @@ public class ResultPage extends Page {
     }
 
     public ResultItem result() {
-        return createComponent(ResultItem.class, find(XPath.from("div").classNames("rc")));
+        return createComponent(ResultItem.class, find(XPath.from("div").classes("rc")));
     }
 }

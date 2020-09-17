@@ -1,11 +1,12 @@
 package test;
 
+import eu.tsystems.mms.tic.testframework.testing.PageFactoryProvider;
 import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
 import org.testng.annotations.Test;
 import pages.ResultPage;
 import pages.StartPage;
 
-public class GoogleSearchTest extends TesterraTest {
+public class GoogleSearchTest extends TesterraTest implements PageFactoryProvider {
 
     @Test(invocationCount = 1, threadPoolSize = 1)
     public void test_Search() {

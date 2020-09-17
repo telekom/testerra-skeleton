@@ -10,14 +10,14 @@ public class SimpleGoogleLayoutTest extends TesterraTest implements UiElementCre
 
     @Test()
     public void test_Layout() {
-        UiElement searchInput = find(Locator.by(By.name("q")).displayed());
-        UiElement searchBtn = find(Locator.by(By.name("btnK")).displayed());
-        UiElement luckyBtn = find(Locator.by(By.name("btnI")).displayed());
+        UiElement searchInput = find(Locate.by(By.name("q")).displayed());
+        UiElement searchBtn = find(Locate.by(By.name("btnK")).displayed());
+        UiElement luckyBtn = find(Locate.by(By.name("btnI")).displayed());
 
-        searchBtn.bounds().below(searchInput).isTrue();
-        luckyBtn.bounds().rightOf(searchBtn).isTrue();
+        searchBtn.bounds().below(searchInput).is(true);
+        luckyBtn.bounds().rightOf(searchBtn).is(true);
         luckyBtn.bounds().fromTop().toTopOf(searchBtn).is(0);
-        luckyBtn.bounds().intersects(searchBtn).isFalse();
+        luckyBtn.bounds().intersects(searchBtn).is(true);
     }
 
     @Test

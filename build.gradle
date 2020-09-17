@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'eu.tsystems.mms.tic.testerra.skeletons'
-version '1.0-SNAPSHOT'
+version '2-SNAPSHOT'
 ext {
     testerraVersion = '2-SNAPSHOT'
 }
