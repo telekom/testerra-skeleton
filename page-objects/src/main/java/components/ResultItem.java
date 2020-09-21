@@ -15,7 +15,7 @@ public class ResultItem extends AbstractComponent<ResultItem> {
         return this;
     }
 
-    public TestableUiElement headline() {
+    public UiElement headline() {
         return find(By.tagName("h3"));
     }
 }
