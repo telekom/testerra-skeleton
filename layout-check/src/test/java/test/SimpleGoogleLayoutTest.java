@@ -1,27 +1,29 @@
 package test;
 
-import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
-import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
-import eu.tsystems.mms.tic.testframework.testing.UiElementCreator;
+import eu.tsystems.mms.tic.testframework.pageobjects.LocatorFactoryProvider;
+import eu.tsystems.mms.tic.testframework.pageobjects.internal.UiElement;
+import eu.tsystems.mms.tic.testframework.pageobjects.internal.UiElementFinder;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class SimpleGoogleLayoutTest extends TesterraTest implements UiElementCreator {
+public class SimpleGoogleLayoutTest extends AbstractGoogleTest implements LocatorFactoryProvider {
 
     @Test()
     public void test_Layout() {
-        UiElement searchInput = find(Locate.by(By.name("q")).displayed());
-        UiElement searchBtn = find(Locate.by(By.name("btnK")).displayed());
-        UiElement luckyBtn = find(Locate.by(By.name("btnI")).displayed());
+        UiElementFinder finder = getFinder();
+        UiElement searchInput = finder.find(Locate.by(By.name("q")).displayed());
+        UiElement searchBtn = finder.find(Locate.by(By.name("btnK")).displayed());
+        UiElement luckyBtn = finder.find(Locate.by(By.name("btnI")).displayed());
 
-        searchBtn.bounds().below(searchInput).is(true);
-        luckyBtn.bounds().rightOf(searchBtn).is(true);
-        luckyBtn.bounds().fromTop().toTopOf(searchBtn).is(0);
-        luckyBtn.bounds().intersects(searchBtn).is(true);
+        searchBtn.expectThat().bounds().below(searchInput).is(true);
+        luckyBtn.expectThat().bounds().rightOf(searchBtn).is(true);
+        luckyBtn.expectThat().bounds().fromTop().toTopOf(searchBtn).is(0);
+        luckyBtn.expectThat().bounds().intersects(searchBtn).is(true);
     }
 
     @Test
     public void test_Layout_Image() {
-        find(By.id("body")).screenshot().pixelDistance("GoogleBody").isLowerThan(10);
+        UiElementFinder finder = getFinder();
+        finder.find(By.id("body")).expectThat().screenshot().pixelDistance("GoogleBody").isLowerThan(10);
     }
 }

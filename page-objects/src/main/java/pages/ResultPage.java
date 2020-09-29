@@ -2,7 +2,7 @@ package pages;
 
 import components.ResultItem;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
-import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
+import eu.tsystems.mms.tic.testframework.pageobjects.internal.UiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.XPath;
 import org.openqa.selenium.WebDriver;
 

@@ -1,8 +1,7 @@
 package components;
 
 import eu.tsystems.mms.tic.testframework.pageobjects.AbstractComponent;
-import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
+import eu.tsystems.mms.tic.testframework.pageobjects.internal.UiElement;
 import org.openqa.selenium.By;
 
 public class ResultItem extends AbstractComponent<ResultItem> {
