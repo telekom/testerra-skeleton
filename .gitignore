@@ -1,5 +1,10 @@
 ## Directory-based project format
 .idea/
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+
 target/
 build/
 testerra-report/

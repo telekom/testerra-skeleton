@@ -3,16 +3,9 @@ apply plugin: 'java'
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
 
-repositories {
-    maven {
-        url  "https://dl.bintray.com/testerra-io/Testerra"
-    }
-    jcenter()
-    //mavenLocal()
-}
-
 dependencies {
-    implementation 'eu.tsystems.mms.tic.testerra:driver-ui-desktop:1.0-RC-3'
+    implementation 'eu.tsystems.mms.tic.testerra:driver-ui-desktop:1.0-RC-11'
+    implementation 'eu.tsystems.mms.tic.testerra:report:1.0-RC-11'
 }
 
 test {
