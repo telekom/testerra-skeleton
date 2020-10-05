@@ -1,8 +1,8 @@
 package test;
 
 import eu.tsystems.mms.tic.testframework.logging.Loggable;
-import eu.tsystems.mms.tic.testframework.pageobjects.internal.UiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.internal.UiElementFinder;
+import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
+import eu.tsystems.mms.tic.testframework.pageobjects.UiElementFinder;
 import org.testng.annotations.BeforeMethod;
 
 public abstract class AbstractGoogleTest extends AbstractFinderTest implements Loggable {

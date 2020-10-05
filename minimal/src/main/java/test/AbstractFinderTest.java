@@ -1,6 +1,6 @@
 package test;
 
-import eu.tsystems.mms.tic.testframework.pageobjects.internal.UiElementFinder;
+import eu.tsystems.mms.tic.testframework.pageobjects.UiElementFinder;
 import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
 import eu.tsystems.mms.tic.testframework.testing.UiElementFinderFactoryProvider;
 import eu.tsystems.mms.tic.testframework.testing.WebDriverManagerProvider;
