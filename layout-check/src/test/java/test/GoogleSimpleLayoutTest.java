@@ -6,7 +6,7 @@ import eu.tsystems.mms.tic.testframework.pageobjects.UiElementFinder;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class SimpleGoogleLayoutTest extends AbstractGoogleTest implements LocatorFactoryProvider {
+public class GoogleSimpleLayoutTest extends AbstractGoogleTest implements LocatorFactoryProvider {
 
     @Test()
     public void test_Layout() {
