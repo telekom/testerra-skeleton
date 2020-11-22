@@ -1,5 +1,6 @@
 package test;
 
+import eu.tsystems.mms.tic.testframework.pageobjects.Aria;
 import eu.tsystems.mms.tic.testframework.pageobjects.LocatorFactoryProvider;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElementFinder;
@@ -18,7 +19,7 @@ public class GoogleSimpleLayoutTest extends AbstractGoogleTest implements Locato
         searchBtn.expectThat().bounds().below(searchInput).is(true);
         luckyBtn.expectThat().bounds().rightOf(searchBtn).is(true);
         luckyBtn.expectThat().bounds().fromTop().toTopOf(searchBtn).is(0);
-        luckyBtn.expectThat().bounds().intersects(searchBtn).is(true);
+        luckyBtn.expectThat().bounds().intersects(searchBtn).is(false);
     }
 
     @Test

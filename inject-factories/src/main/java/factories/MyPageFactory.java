@@ -1,8 +1,8 @@
 package factories;
 
 import eu.tsystems.mms.tic.testframework.logging.Loggable;
-import eu.tsystems.mms.tic.testframework.pageobjects.DefaultPageFactory;
 import eu.tsystems.mms.tic.testframework.pageobjects.PageObject;
+import eu.tsystems.mms.tic.testframework.pageobjects.internal.DefaultPageFactory;
 import org.openqa.selenium.WebDriver;
 
 public class MyPageFactory extends DefaultPageFactory implements Loggable {
