@@ -19,6 +19,7 @@ allprojects {
 
     sourceCompatibility = 11
 
+    testerraVersion = '2-SNAPSHOT'
     dependencies {
         implementation group: 'eu.tsystems.mms.tic.testerra', name: 'core', version: testerraVersion
     }
