@@ -38,4 +38,4 @@ gradle test -Peverything
 ```
 
 ## View test results
-Open `testerra-report/index.html` in an evergreen browser.
+Open `test-report/report-ng` in an evergreen browser.
