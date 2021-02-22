@@ -9,11 +9,6 @@ public class ResultItem extends AbstractComponent<ResultItem> {
         super(rootElement);
     }
 
-    @Override
-    protected ResultItem self() {
-        return this;
-    }
-
     public UiElement headline() {
         return find(By.tagName("h3"));
     }

@@ -11,12 +11,12 @@ public class GoogleSearchTest extends TesterraTest implements PageFactoryProvide
 
     @Test(invocationCount = 1, threadPoolSize = 1)
     public void test_Search() {
-        StartPage startPage = pageFactory.createPage(StartPage.class);
+        StartPage startPage = PAGE_FACTORY.createPage(StartPage.class);
 
         startPage.acceptCookies();
         ResultPage resultPage = startPage.type("testerra").searchByEnter();
 
-        Control.withTimeout(1, () -> {
+        CONTROL.withTimeout(1, () -> {
             UiElement headline = resultPage.getResult().list().first().headline();
             headline.expect().text().contains("Testerra");
             headline.click();

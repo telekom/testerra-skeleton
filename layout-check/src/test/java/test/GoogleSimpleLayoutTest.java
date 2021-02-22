@@ -2,6 +2,7 @@ package test;
 
 import eu.tsystems.mms.tic.testframework.pageobjects.LocatorFactoryProvider;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
+import eu.tsystems.mms.tic.testframework.pageobjects.UiElementFinder;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -9,6 +10,7 @@ public class GoogleSimpleLayoutTest extends AbstractGoogleTest implements Locato
 
     @Test()
     public void test_Layout() {
+        UiElementFinder finder = getFinder();
         UiElement searchInput = finder.find(LOCATE.by(By.name("q")).displayed());
         UiElement searchBtn = finder.find(LOCATE.by(By.name("btnK")).displayed());
         UiElement luckyBtn = finder.find(LOCATE.by(By.name("btnI")).displayed());
@@ -21,6 +23,7 @@ public class GoogleSimpleLayoutTest extends AbstractGoogleTest implements Locato
 
     @Test
     public void test_Layout_Image() {
+        UiElementFinder finder = getFinder();
         finder.find(By.id("body")).expect().screenshot().pixelDistance("GoogleBody").isLowerThan(10);
     }
 }
