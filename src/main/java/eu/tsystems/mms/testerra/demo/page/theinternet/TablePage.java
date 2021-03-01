@@ -92,7 +92,8 @@ public class TablePage extends Page {
         final GuiElement filteredDataRow = tableOne.getSubElement(
                 By.xpath(".//tr" +
                         "//td[" + indexLastName + "][text()='" + user.getLastName() + "']/.." +
-                        "//td[" + indexFirstName + "][text()='" + user.getFirstName() + "']/..")));
+                        "//td[" + indexFirstName + "][text()='" + user.getFirstName() + "']/..")
+        );
 
         return filteredDataRow.isDisplayed();
     }
