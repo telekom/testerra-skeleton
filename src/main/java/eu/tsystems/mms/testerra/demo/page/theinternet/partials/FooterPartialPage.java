@@ -18,8 +18,8 @@ package eu.tsystems.mms.testerra.demo.page.theinternet.partials;
 
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
 import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.Locate;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -33,10 +33,10 @@ import org.openqa.selenium.WebDriver;
 public class FooterPartialPage extends Page {
 
     @Check
-    private GuiElement sectionFooter = new GuiElement(this.getWebDriver(), Locate.by().id("page-footer"));
+    private GuiElement sectionFooter = new GuiElement(this.getWebDriver(), By.id("page-footer"));
 
     @Check
-    private GuiElement linkElementalSelenium = sectionFooter.getSubElement(Locate.by().linkText("Elemental Selenium"));
+    private GuiElement linkElementalSelenium = sectionFooter.getSubElement(By.linkText("Elemental Selenium"));
 
     public FooterPartialPage(WebDriver driver) {
         super(driver);

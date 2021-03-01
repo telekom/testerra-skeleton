@@ -19,9 +19,9 @@ package eu.tsystems.mms.testerra.demo.page.theinternet;
 import eu.tsystems.mms.testerra.demo.page.theinternet.partials.FooterPartialPage;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
 import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.Locate;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
 import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -37,15 +37,15 @@ public class StartPage extends Page {
     private FooterPartialPage footer = PageFactory.create(FooterPartialPage.class, this.getWebDriver());
 
     @Check
-    private GuiElement headerElement = new GuiElement(this.getWebDriver(), Locate.by().cssSelector("h1.heading"));
+    private GuiElement headerElement = new GuiElement(this.getWebDriver(), By.cssSelector("h1.heading"));
 
     @Check
-    private GuiElement navLinkDragAndDrop = new GuiElement(this.getWebDriver(), Locate.by().linkText("Drag and Drop"));
+    private GuiElement navLinkDragAndDrop = new GuiElement(this.getWebDriver(), By.linkText("Drag and Drop"));
 
     @Check
-    private GuiElement navLinkAddAndRemoveElements = new GuiElement(this.getWebDriver(), Locate.by().linkText("Add/Remove Elements"));
+    private GuiElement navLinkAddAndRemoveElements = new GuiElement(this.getWebDriver(), By.linkText("Add/Remove Elements"));
     @Check
-    private GuiElement navLinkTables = new GuiElement(this.getWebDriver(), Locate.by().linkText("Sortable Data Tables"));
+    private GuiElement navLinkTables = new GuiElement(this.getWebDriver(), By.linkText("Sortable Data Tables"));
 
     public StartPage(WebDriver driver) {
         super(driver);

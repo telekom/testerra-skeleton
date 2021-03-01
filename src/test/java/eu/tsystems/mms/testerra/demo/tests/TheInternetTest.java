@@ -137,7 +137,7 @@ public class TheInternetTest extends TesterraTest {
     }
 
     @Test
-    @Fails(ticketId = 1, description = "Will fail because user does not exist")
+    @Fails(ticketString = "http://jira.mms/JIRA-1337", description = "Will fail because user does not exist")
     @FailureCorridor.Low
     public void testT04_TableEntryNotPresent() {
 
