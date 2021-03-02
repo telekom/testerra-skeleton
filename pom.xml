@@ -21,13 +21,13 @@
         <argLine>-Duser.language=${user.language} -Duser.country=${user.country}</argLine>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>testerra</id>
-            <name>Testerra</name>
-            <url>https://dl.bintray.com/testerra-io/Testerra</url>
-        </repository>
-    </repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>testerra</id>-->
+<!--            <name>Testerra</name>-->
+<!--            <url>https://dl.bintray.com/testerra-io/Testerra</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
     <dependencies>
         <dependency>
@@ -37,7 +37,7 @@
         </dependency>
         <dependency>
             <groupId>eu.tsystems.mms.tic.testerra</groupId>
-            <artifactId>report</artifactId>
+            <artifactId>report-ng</artifactId>
             <version>${testerra.version}</version>
         </dependency>
 
