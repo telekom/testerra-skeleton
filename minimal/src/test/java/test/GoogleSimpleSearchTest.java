@@ -9,7 +9,7 @@ public class GoogleSimpleSearchTest extends AbstractGoogleTest implements Loggab
 
     @Test()
     public void test_Search() {
-        UiElementFinder finder = getFinder();
+        UiElementFinder finder = createFinder();
         finder.find(By.name("q")).type("Hallo World");
         finder.find(By.name("btnK")).click();
     }

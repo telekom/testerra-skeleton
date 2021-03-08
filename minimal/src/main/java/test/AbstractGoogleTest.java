@@ -10,7 +10,7 @@ public abstract class AbstractGoogleTest extends AbstractFinderTest implements L
 
     @BeforeMethod
     public void acceptCookies() {
-        UiElement acceptCookiesBtn = getFinder().findDeep(XPath.from("span").text("Ich stimme zu"));
+        UiElement acceptCookiesBtn = createFinder().findDeep(XPath.from("span").text("Ich stimme zu"));
         if (acceptCookiesBtn.waitFor().displayed(true)) {
             acceptCookiesBtn.click();
         }

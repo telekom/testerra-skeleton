@@ -5,7 +5,7 @@ plugins {
 group 'eu.tsystems.mms.tic.testerra.skeletons'
 version '2-SNAPSHOT'
 ext {
-    testerraVersion = '2-SNAPSHOT'
+    testerraVersion = '2.0-RC-3'
 }
 
 allprojects {
@@ -16,10 +16,8 @@ allprojects {
 
     compileJava.options.encoding = 'UTF-8'
     compileTestJava.options.encoding = "UTF-8"
-
     sourceCompatibility = 11
 
-    testerraVersion = '2-SNAPSHOT'
     dependencies {
         implementation group: 'eu.tsystems.mms.tic.testerra', name: 'core', version: testerraVersion
     }

@@ -10,7 +10,7 @@ public class GoogleSimpleLayoutTest extends AbstractGoogleTest implements Locato
 
     @Test()
     public void test_Layout() {
-        UiElementFinder finder = getFinder();
+        UiElementFinder finder = createFinder();
         UiElement searchInput = finder.find(LOCATE.by(By.name("q")).displayed());
         UiElement searchBtn = finder.find(LOCATE.by(By.name("btnK")).displayed());
         UiElement luckyBtn = finder.find(LOCATE.by(By.name("btnI")).displayed());
@@ -23,7 +23,7 @@ public class GoogleSimpleLayoutTest extends AbstractGoogleTest implements Locato
 
     @Test
     public void test_Layout_Image() {
-        UiElementFinder finder = getFinder();
+        UiElementFinder finder = createFinder();
         finder.find(By.id("body")).expect().screenshot().pixelDistance("GoogleBody").isLowerThan(10);
     }
 }
