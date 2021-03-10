@@ -4,6 +4,7 @@
     <test name="Basics">
         <classes>
             <class name="test.GoogleSearchTest"></class>
+            <class name="test.GoogleSearchTestSeparated"></class>
         </classes>
     </test>
 </suite>

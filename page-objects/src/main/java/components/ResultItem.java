@@ -9,7 +9,7 @@ public class ResultItem extends AbstractComponent<ResultItem> {
         super(rootElement);
     }
 
-    public UiElement headline() {
+    public UiElement getHeadline() {
         return find(By.tagName("h3"));
     }
 }

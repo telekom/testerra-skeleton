@@ -28,18 +28,15 @@ public class StartPage extends Page {
         return this;
     }
 
-    public ResultPage searchByEnter() {
+    public void searchByEnter() {
         searchField.sendKeys(Keys.ENTER);
-        return createPage(ResultPage.class);
     }
 
-    public ResultPage searchByDefaultButton() {
+    public void searchByDefaultButton() {
         searchBtn.click();
-        return createPage(ResultPage.class);
     }
 
-    public ResultPage searchLucky() {
+    public void searchLucky() {
         find(By.className("RNmpXc")).click();
-        return createPage(ResultPage.class);
     }
 }
