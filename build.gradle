@@ -24,30 +24,6 @@ allprojects {
 }
 
 test {
-    // define as
-    //      key: profile name
-    //      value: testng suite xml filename
-    def profiles = [
-            "all": "AllTests.xml"
-    ]
-
-    /*
-    create suite def
-     */
-    def suiteFiles = []
-    profiles.each { k, v ->
-        if (project.hasProperty("" + k)) {
-            def f = 'src/test/suites/resources/' + v
-            suiteFiles << f
-        }
-    }
-
-    print suiteFiles
-
-    useTestNG() {
-        suites(suiteFiles as String[])
-    }
-
     testLogging {
         outputs.upToDateWhen { false }
         showStandardStreams = true
