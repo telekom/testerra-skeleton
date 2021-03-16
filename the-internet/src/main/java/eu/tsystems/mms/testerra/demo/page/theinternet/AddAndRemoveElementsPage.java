@@ -20,6 +20,7 @@ package eu.tsystems.mms.testerra.demo.page.theinternet;
 import eu.tsystems.mms.tic.testframework.l10n.SimpleLocalization;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
+import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -63,8 +64,8 @@ public class AddAndRemoveElementsPage extends Page {
         return createPage(AddAndRemoveElementsPage.class);
     }
 
-    public int getElementCount() {
-        return this.deleteElementButtonList.list().size();
+    public TestableUiElement getDeleteElementButton() {
+        return this.deleteElementButtonList;
     }
 
     public AddAndRemoveElementsPage doRemoveElement() {

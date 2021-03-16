@@ -24,6 +24,7 @@ import eu.tsystems.mms.testerra.demo.page.theinternet.StartPage;
 import eu.tsystems.mms.testerra.demo.page.theinternet.TablePage;
 import eu.tsystems.mms.tic.testframework.annotations.Fails;
 import eu.tsystems.mms.tic.testframework.constants.Browsers;
+import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
 import eu.tsystems.mms.tic.testframework.report.FailureCorridor;
 import eu.tsystems.mms.tic.testframework.report.model.steps.TestStep;
@@ -87,20 +88,19 @@ public class TheInternetTest extends TesterraTest implements WebDriverManagerPro
         StartPage startPage = PAGE_FACTORY.createPage(StartPage.class);
 
         AddAndRemoveElementsPage addAndRemoveElementsPage = startPage.goToAddAndRemoveElementsPage();
-
-        Assert.assertEquals(addAndRemoveElementsPage.getElementCount(), 0);
+        addAndRemoveElementsPage.getDeleteElementButton().expect().foundElements().is(0);
         addAndRemoveElementsPage = addAndRemoveElementsPage.doAddElement();
 
-        Assert.assertEquals(addAndRemoveElementsPage.getElementCount(), 1);
+        addAndRemoveElementsPage.getDeleteElementButton().expect().foundElements().is(1);
         addAndRemoveElementsPage = addAndRemoveElementsPage.doAddElement();
 
-        Assert.assertEquals(addAndRemoveElementsPage.getElementCount(), 2);
+        addAndRemoveElementsPage.getDeleteElementButton().expect().foundElements().is(2);
         addAndRemoveElementsPage = addAndRemoveElementsPage.doAddElement();
 
-        Assert.assertEquals(addAndRemoveElementsPage.getElementCount(), 3);
+        addAndRemoveElementsPage.getDeleteElementButton().expect().foundElements().is(3);
         addAndRemoveElementsPage = addAndRemoveElementsPage.doRemoveElement();
 
-        Assert.assertEquals(addAndRemoveElementsPage.getElementCount(), 2);
+        addAndRemoveElementsPage.getDeleteElementButton().expect().foundElements().is(2);
     }
 
     @Test
