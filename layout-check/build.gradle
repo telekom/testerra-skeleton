@@ -1,4 +1,3 @@
 dependencies {
-    implementation group: 'eu.tsystems.mms.tic.testerra', name: 'driver-ui-desktop', version: testerraVersion
     testCompile project(":minimal")
 }

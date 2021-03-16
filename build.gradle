@@ -8,7 +8,7 @@ ext {
     testerraVersion = '2.0-RC-3'
 }
 
-allprojects {
+subprojects {
 
     repositories {
         mavenLocal()
@@ -19,7 +19,8 @@ allprojects {
     sourceCompatibility = 11
 
     dependencies {
-        implementation group: 'eu.tsystems.mms.tic.testerra', name: 'core', version: testerraVersion
+        implementation "eu.tsystems.mms.tic.testerra:driver-ui-desktop:${testerraVersion}"
+        implementation "eu.tsystems.mms.tic.testerra:report-ng:${testerraVersion}"
     }
 }
 

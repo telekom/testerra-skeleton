@@ -1,4 +1,3 @@
 dependencies {
     compile project(':page-objects')
-    implementation group: 'eu.tsystems.mms.tic.testerra', name: 'driver-ui-desktop', version: testerraVersion
 }
