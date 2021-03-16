@@ -19,20 +19,15 @@ package eu.tsystems.mms.testerra.demo.page.theinternet;
 
 import eu.tsystems.mms.testerra.demo.model.theinternet.UserModel;
 import eu.tsystems.mms.testerra.demo.page.theinternet.partials.FooterPartialPage;
+import eu.tsystems.mms.tic.testframework.pageobjects.AbstractComponent;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
-import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.Locate;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElementList;
-import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
+import java.util.stream.Collectors;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Represents https://the-internet.herokuapp.com/tables
@@ -46,51 +41,59 @@ public class TablePage extends Page {
 
     private FooterPartialPage footer = createComponent(FooterPartialPage.class, find(By.id("page-footer")));
 
+    public static class Row extends AbstractComponent<Row> {
+        private final UiElement table;
+        private final UiElement headers;
+
+        public Row(UiElement rootElement) {
+            super(rootElement);
+            this.table = (UiElement) rootElement.getParent();
+            this.headers = table.find(By.className("header"));
+        }
+
+        private UiElement getColumnByPosition(int position) {
+            return find(By.xpath(String.format("(./td|./th)[%d]", position)));
+        }
+
+        public UiElement getColumnByName(String columnName) {
+            return getColumnByPosition(getColumnPosition(columnName));
+        }
+
+        public int getColumnPosition(final String column) {
+            return getColumnNames().indexOf(column)+1;
+        }
+
+        public List<String> getColumnNames() {
+
+            if (headers.waitFor().present(true)) {
+                return headers.list().stream().map(uiElement -> uiElement.waitFor().text().getActual()).collect(Collectors.toList());
+            }
+            return List.of();
+        }
+
+    }
+
     @Check
     private UiElement tableOne = find(By.id("table1"));
-    private UiElement tableOneHeader = tableOne.find(By.className("header"));
 
     public TablePage(WebDriver driver) {
         super(driver);
     }
 
-    public List<String> getAvailAbleColumnNames() {
-
-        final List<String> columnNames = new LinkedList<>();
-
-        if (tableOneHeader.waitFor().present(true)) {
-            tableOneHeader.list().forEach(headerElement -> columnNames.add(headerElement.waitFor().text().getActual()));
-        }
-
-        return columnNames;
-    }
-
     public TablePage doSortTableByColumn(String columnHeaderValue) {
-
-        final Optional<UiElement> headerElementToSort = tableOneHeader.list().stream().filter(headerElement -> headerElement.waitFor().text(columnHeaderValue)).findAny();
-        headerElementToSort.ifPresent(UiElement::click);
+        getRows().first().getColumnByName(columnHeaderValue).click();
         return createPage(TablePage.class);
     }
 
-    public HashMap<String, String> getRowDataByIndex(int row) {
-
-        final HashMap<String, String> result = new HashMap<>();
-
-        final List<String> availAbleColumnNames = this.getAvailAbleColumnNames();
-        final UiElement tableRow = this.getTableRows().get(row);
-
-        for (int i = 0; i < availAbleColumnNames.size(); i++) {
-            final UiElement tdElement = tableRow.find(By.cssSelector("td")).list().get(i);
-            result.put(availAbleColumnNames.get(i), tdElement.waitFor().text().getActual());
-        }
-
-        return result;
+    public UiElementList<Row> getRows() {
+        return createComponent(Row.class, tableOne.find(By.tagName("tr"))).list();
     }
 
     public boolean isUserShown(UserModel user) {
 
-        int indexLastName = getIndexOfColumn("Last Name");
-        int indexFirstName = getIndexOfColumn("First Name");
+        Row first = getRows().first();
+        int indexLastName = first.getColumnPosition("Last Name");
+        int indexFirstName = first.getColumnPosition("First Name");
         final UiElement filteredDataRow = tableOne.find(
                 By.xpath(".//tr" +
                         "//td[" + indexLastName + "][text()='" + user.getLastName() + "']/.." +
@@ -98,21 +101,5 @@ public class TablePage extends Page {
         );
 
         return filteredDataRow.waitFor().displayed(true);
-    }
-
-    private UiElementList<UiElement> getTableRows() {
-        return tableOne.find(By.xpath(".//tr")).list();
-    }
-
-    private int getIndexOfColumn(final String column) {
-
-        final List<String> availAbleColumnNames = this.getAvailAbleColumnNames();
-        for (int i = 0; i < availAbleColumnNames.size(); i++) {
-            if (availAbleColumnNames.get(i).equals(column)) {
-                return i + 1;
-            }
-        }
-
-        return 0;
     }
 }

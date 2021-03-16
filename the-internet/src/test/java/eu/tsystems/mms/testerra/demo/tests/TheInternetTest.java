@@ -25,6 +25,7 @@ import eu.tsystems.mms.testerra.demo.page.theinternet.TablePage;
 import eu.tsystems.mms.tic.testframework.annotations.Fails;
 import eu.tsystems.mms.tic.testframework.constants.Browsers;
 import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
+import eu.tsystems.mms.tic.testframework.pageobjects.UiElementList;
 import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
 import eu.tsystems.mms.tic.testframework.report.FailureCorridor;
 import eu.tsystems.mms.tic.testframework.report.model.steps.TestStep;
@@ -110,25 +111,24 @@ public class TheInternetTest extends TesterraTest implements WebDriverManagerPro
         final UserModel userNonExisting = userModelFactory.createNonExisting();
 
         TestStep.begin("1. Init driver");
-        final WebDriver driver = WebDriverManager.getWebDriver();
-        StartPage startPage = PageFactory.create(StartPage.class, driver);
+        StartPage startPage = PAGE_FACTORY.createPage(StartPage.class);
 
         TestStep.begin("2. Navigate to tables");
         TablePage tablePage = startPage.goToTablePage();
 
         TestStep.begin("3. Assert Last Name column present");
-        final List<String> availAbleColumnNames = tablePage.getAvailAbleColumnNames();
-        Assert.assertTrue(availAbleColumnNames.contains("Last Name"));
+        UiElementList<TablePage.Row> rows = tablePage.getRows();
+        Assert.assertTrue(rows.first().getColumnNames().contains("Last Name"));
 
         TestStep.begin("4. Get data of first entry");
-        HashMap<String, String> row1BeforeSorting = tablePage.getRowDataByIndex(1);
+        TablePage.Row firstRow = rows.get(1);
+        String lastNameBeforeSorting = firstRow.getColumnByName("Last Name").waitFor().text().getActual();
 
         TestStep.begin("5. Sort by Last Name");
         tablePage = tablePage.doSortTableByColumn("Last Name");
 
         TestStep.begin("6. Assert another data set is now in row 1");
-        HashMap<String, String> row1AfterSorting = tablePage.getRowDataByIndex(1);
-        Assert.assertNotEquals(row1AfterSorting.get("Last Name"), row1BeforeSorting.get("Last Name"));
+        firstRow.getColumnByName("Last Name").expect().text().isNot(lastNameBeforeSorting);
 
         TestStep.begin("7. Assert user model shown");
         Assert.assertTrue(tablePage.isUserShown(userJohnSmith));
@@ -143,8 +143,7 @@ public class TheInternetTest extends TesterraTest implements WebDriverManagerPro
         final UserModel userNonExisting = userModelFactory.createNonExisting();
         TestStep.begin("1. Init driver");
 
-        final WebDriver driver = WebDriverManager.getWebDriver();
-        StartPage startPage = PageFactory.create(StartPage.class, driver);
+        StartPage startPage = PAGE_FACTORY.createPage(StartPage.class);
 
         TestStep.begin("2. Navigate to tables");
         TablePage tablePage = startPage.goToTablePage();
