@@ -24,24 +24,17 @@ import eu.tsystems.mms.testerra.demo.page.theinternet.StartPage;
 import eu.tsystems.mms.testerra.demo.page.theinternet.TablePage;
 import eu.tsystems.mms.tic.testframework.annotations.Fails;
 import eu.tsystems.mms.tic.testframework.constants.Browsers;
-import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElementList;
-import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
 import eu.tsystems.mms.tic.testframework.report.FailureCorridor;
 import eu.tsystems.mms.tic.testframework.report.model.steps.TestStep;
 import eu.tsystems.mms.tic.testframework.testing.PageFactoryProvider;
 import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
 import eu.tsystems.mms.tic.testframework.testing.WebDriverManagerProvider;
 import eu.tsystems.mms.tic.testframework.useragents.ChromeConfig;
-import eu.tsystems.mms.tic.testframework.webdrivermanager.WebDriverManager;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * Sample Description goes here.
@@ -118,14 +111,15 @@ public class TheInternetTest extends TesterraTest implements WebDriverManagerPro
 
         TestStep.begin("3. Assert Last Name column present");
         UiElementList<TablePage.Row> rows = tablePage.getRows();
-        Assert.assertTrue(rows.first().getColumnNames().contains("Last Name"));
+        TablePage.Row headerRow = rows.first();
+        Assert.assertTrue(headerRow.getColumnNames().contains("Last Name"));
 
         TestStep.begin("4. Get data of first entry");
         TablePage.Row firstRow = rows.get(1);
         String lastNameBeforeSorting = firstRow.getColumnByName("Last Name").waitFor().text().getActual();
 
         TestStep.begin("5. Sort by Last Name");
-        tablePage = tablePage.doSortTableByColumn("Last Name");
+        headerRow.getColumnByName("Last Name").click();
 
         TestStep.begin("6. Assert another data set is now in row 1");
         firstRow.getColumnByName("Last Name").expect().text().isNot(lastNameBeforeSorting);

@@ -80,11 +80,6 @@ public class TablePage extends Page {
         super(driver);
     }
 
-    public TablePage doSortTableByColumn(String columnHeaderValue) {
-        getRows().first().getColumnByName(columnHeaderValue).click();
-        return createPage(TablePage.class);
-    }
-
     public UiElementList<Row> getRows() {
         return createComponent(Row.class, tableOne.find(By.tagName("tr"))).list();
     }
