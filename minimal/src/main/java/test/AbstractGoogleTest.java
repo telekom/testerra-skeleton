@@ -1,12 +1,10 @@
 package test;
 
-import eu.tsystems.mms.tic.testframework.logging.Loggable;
-import eu.tsystems.mms.tic.testframework.pageobjects.LocatorFactoryProvider;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.XPath;
 import org.testng.annotations.BeforeMethod;
 
-public abstract class AbstractGoogleTest extends AbstractFinderTest implements Loggable, LocatorFactoryProvider {
+public abstract class AbstractGoogleTest extends AbstractFinderTest {
 
     @BeforeMethod
     public void acceptCookies() {

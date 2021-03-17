@@ -1,11 +1,10 @@
 package test;
 
-import eu.tsystems.mms.tic.testframework.logging.Loggable;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElementFinder;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class GoogleSimpleSearchTest extends AbstractGoogleTest implements Loggable {
+public class GoogleSimpleSearchTest extends AbstractGoogleTest {
 
     @Test()
     public void test_Search() {
