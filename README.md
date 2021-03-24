@@ -9,6 +9,8 @@ For simplicity, we will use Maven as build and dependency management tool.
 This project is an implementation of the [getting started](http://docs.testerra.io/testerra/stable/index.html#_getting_started) tutorial.
 All you have to do is, to setup an [own selenium server](http://docs.testerra.io/testerra/stable/index.html#_setup_selenium)
 
+Testerra and all of its components are published at MavenCentral. Make sure you configure your Maven or Gradle to give you access.
+
 ## Demo App
 For sample page objects and easy testcases we use https://the-internet.herokuapp.com/ as base url for testing.
 
