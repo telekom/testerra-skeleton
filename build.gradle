@@ -4,8 +4,8 @@ compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
 
 dependencies {
-    implementation 'io.testerra:driver-ui-desktop:1.0-RC-32'
-    implementation 'io.testerra:report-ng:1.0-RC-32'
+    implementation 'io.testerra:driver-ui-desktop:1.0-RC-34'
+    implementation 'io.testerra:report-ng:1.0-RC-34'
 }
 
 test {
