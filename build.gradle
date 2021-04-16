@@ -2,10 +2,10 @@ plugins {
     id 'java'
 }
 
-group 'eu.tsystems.mms.tic.testerra.skeletons'
+group 'io.testerra.skeletons'
 version '2-SNAPSHOT'
 ext {
-    testerraVersion = '2.0-RC-3'
+    testerraVersion = '2.0-RC-4'
 }
 
 subprojects {
@@ -19,8 +19,8 @@ subprojects {
     sourceCompatibility = 11
 
     dependencies {
-        implementation "eu.tsystems.mms.tic.testerra:driver-ui-desktop:${testerraVersion}"
-        implementation "eu.tsystems.mms.tic.testerra:report-ng:${testerraVersion}"
+        implementation "io.testerra:driver-ui-desktop:${testerraVersion}"
+        implementation "io.testerra:report-ng:${testerraVersion}"
     }
 }
 

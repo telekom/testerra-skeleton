@@ -3,7 +3,7 @@ include "minimal"
 include "page-objects"
 include "inject-factories"
 include "layout-check"
-//include 'the-internet'
+include 'the-internet'
 
 // Add this for local development
 //includeBuild "../testerra"
