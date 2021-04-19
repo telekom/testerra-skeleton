@@ -1,16 +1,16 @@
-plugins {
-    id 'java'
-}
-
-group 'io.testerra.skeletons'
-version '2-SNAPSHOT'
 ext {
     testerraVersion = '2.0-RC-4'
 }
 
 subprojects {
 
+    apply plugin: 'java'
+
+    group 'io.testerra.skeletons'
+    version '2-SNAPSHOT'
+
     repositories {
+        mavenCentral()
         mavenLocal()
     }
 
@@ -22,18 +22,18 @@ subprojects {
         implementation "io.testerra:driver-ui-desktop:${testerraVersion}"
         implementation "io.testerra:report-ng:${testerraVersion}"
     }
-}
 
-test {
-    testLogging {
-        outputs.upToDateWhen { false }
-        showStandardStreams = true
+    test {
+        testLogging {
+            outputs.upToDateWhen { false }
+            showStandardStreams = true
+        }
+
+        options {
+            systemProperties(System.getProperties())
+        }
+
+        // basically execution returns "GREEN" (framework exits with exit code > 0 if there were failures)
+        ignoreFailures = true
     }
-
-    options {
-        systemProperties(System.getProperties())
-    }
-
-    // basically execution returns "GREEN" (framework exits with exit code > 0 if there were failures)
-    ignoreFailures = true
 }
