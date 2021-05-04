@@ -3,9 +3,13 @@ apply plugin: 'java'
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
 
+ext {
+    testerraVersion = '1.0.0'
+}
+
 dependencies {
-    implementation 'io.testerra:driver-ui-desktop:1.0-RC-34'
-    implementation 'io.testerra:report-ng:1.0-RC-34'
+    implementation "io.testerra:driver-ui-desktop:${testerraVersion}"
+    implementation "io.testerra:report-ng:${testerraVersion}"
 }
 
 test {
@@ -14,6 +18,7 @@ test {
     //      value: testng suite xml filename
     def profiles = [
             "mySuite": "suite.xml",
+            "myFoo": "bar.xml"
     ]
 
     /*

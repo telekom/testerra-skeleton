@@ -52,7 +52,7 @@ public class TheInternetTest extends TesterraTest {
     private static final UserModelFactory userModelFactory = new UserModelFactory();
 
     /**
-     * https://tapas-docs.s3.eu-central-1.amazonaws.com/testerra/latest/index.html#_chrome_in_a_container
+     * http://docs.testerra.io/testerra/stable/index.html#_chrome_in_a_container
      */
     @BeforeSuite
     public void configureChromeOptions() {
