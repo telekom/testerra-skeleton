@@ -4,6 +4,10 @@ This project is a simple skeleton project for [Testerra framework]([https://gith
 file and directory structure and common best practices to getting you and your project work as fast as possible.  
 For simplicity, we will use Maven as build and dependency management tool. 
 
+## Actions
+
+This project has some GitHub actions.
+
 ## Perquisites
 
 This project is an implementation of the [getting started](http://docs.testerra.io/testerra/stable/index.html#_getting_started) tutorial.
