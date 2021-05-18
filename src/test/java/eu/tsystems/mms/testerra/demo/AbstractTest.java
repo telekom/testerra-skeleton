@@ -33,7 +33,7 @@ import org.testng.annotations.BeforeSuite;
 
 public class AbstractTest extends TesterraTest {
     /**
-     * https://tapas-docs.s3.eu-central-1.amazonaws.com/testerra/latest/index.html#_chrome_in_a_container
+     * http://docs.testerra.io/testerra/stable/index.html#_chrome_in_a_container
      */
     @BeforeSuite
     public void configureChromeOptions() {
