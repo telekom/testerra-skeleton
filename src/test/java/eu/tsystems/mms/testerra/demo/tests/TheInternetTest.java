@@ -23,18 +23,14 @@ import eu.tsystems.mms.testerra.demo.page.theinternet.DragAndDropPage;
 import eu.tsystems.mms.testerra.demo.page.theinternet.StartPage;
 import eu.tsystems.mms.testerra.demo.page.theinternet.TablePage;
 import eu.tsystems.mms.tic.testframework.annotations.Fails;
-import eu.tsystems.mms.tic.testframework.constants.Browsers;
 import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
 import eu.tsystems.mms.tic.testframework.report.FailureCorridor;
 import eu.tsystems.mms.tic.testframework.report.model.steps.TestStep;
-import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
-import eu.tsystems.mms.tic.testframework.useragents.ChromeConfig;
 import eu.tsystems.mms.tic.testframework.webdrivermanager.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+import eu.tsystems.mms.testerra.demo.AbstractTest;
 
 import java.util.HashMap;
 import java.util.List;
@@ -47,22 +43,9 @@ import java.util.List;
  *
  * @author Eric Kubenka
  */
-public class TheInternetTest extends TesterraTest {
+public class TheInternetTest extends AbstractTest {
 
     private static final UserModelFactory userModelFactory = new UserModelFactory();
-
-    /**
-     * http://docs.testerra.io/testerra/stable/index.html#_chrome_in_a_container
-     */
-    @BeforeSuite
-    public void configureChromeOptions() {
-        WebDriverManager.setUserAgentConfig(Browsers.chromeHeadless, new ChromeConfig() {
-            @Override
-            public void configure(ChromeOptions options) {
-                options.addArguments("--disable-dev-shm-usage");
-            }
-        });
-    }
 
     @Test
     public void testT01_DoDragAndDrop() {
