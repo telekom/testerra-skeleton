@@ -26,6 +26,6 @@ public class GoogleSimpleLayoutTest extends AbstractGoogleTest implements Locato
     @Fails(description = "Body element does not exists anymore")
     public void test_Layout_Image() {
         UiElementFinder finder = createFinder();
-        finder.find(By.id("body")).expect().screenshot().pixelDistance("GoogleBody").isLowerThan(10);
+        finder.find(By.tagName("body")).expect().screenshot().pixelDistance("GoogleBody").isLowerThan(1);
     }
 }

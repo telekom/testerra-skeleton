@@ -16,10 +16,10 @@ public class StartPage extends Page {
     }
 
     public void acceptCookies() {
-        UiElement acceptCookieBtn = findDeep(XPath.from("span").text("Ich stimme zu")).setName("acceptCookiesBtn");
+        UiElement acceptCookieBtn = findDeep(XPath.from("button").text("Ich stimme zu")).setName("acceptCookiesBtn");
         if (acceptCookieBtn.waitFor().displayed(true)) {
             acceptCookieBtn.click();
-            acceptCookieBtn.expect().present(false);
+            acceptCookieBtn.expect().displayed(false);
         }
     }
 
