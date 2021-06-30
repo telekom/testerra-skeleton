@@ -1,5 +1,6 @@
 package test;
 
+import eu.tsystems.mms.tic.testframework.pageobjects.InteractiveUiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import eu.tsystems.mms.tic.testframework.testing.PageFactoryProvider;
 import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
@@ -45,8 +46,8 @@ public class GoogleSearchTestSeparated extends TesterraTest implements
         WebDriver webDriver = getExclusiveWebDriver();
         ResultPage resultPage = PAGE_FACTORY.createPage(ResultPage.class, webDriver);
 
-        UiElement headline = resultPage.getResult().list().first().getHeadline();
-        headline.expect().text().contains("Testerra");
+        InteractiveUiElement headline = resultPage.getResult().list().first().getHeadline();
+        headline.expect().text().contains("Testerra").is(true);
         headline.click();
 
         WEB_DRIVER_MANAGER.shutdownSession(webDriver);
