@@ -4,7 +4,7 @@ This project is a simple skeleton project for [Testerra framework]([https://gith
 file and directory structure and common best practices to getting you and your project work as fast as possible.  
 For simplicity, we will use Maven as build and dependency management tool. 
 
-## Perquisites
+## Prerequisites
 
 This project is an implementation of the [getting started](http://docs.testerra.io/testerra/stable/index.html#_getting_started) tutorial.
 All you have to do is, to setup an [own selenium server](http://docs.testerra.io/testerra/stable/index.html#_setup_selenium)
@@ -21,7 +21,7 @@ mvn test -PmySuite
 # or
 gradle test -PmySuite
 ```
-This will execute four simple tests in parallel mode for demonstrating you, how to use basic components of Testerra. You can see a list of features below.
+This will execute four simple tests in parallel mode to demonstrate how to use basic components of Testerra. You can see a list of features below.
 
 ## What this skeleton project offers you
 
