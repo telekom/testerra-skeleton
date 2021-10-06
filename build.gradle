@@ -4,7 +4,7 @@ compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
 
 ext {
-    testerraVersion = '1.7'
+    testerraVersion = '1.8'
 }
 
 dependencies {
@@ -21,9 +21,7 @@ test {
             "myFoo": "bar.xml"
     ]
 
-    /*
-    create suite def
-     */
+    // create suite def
     def suiteFiles = []
     profiles.each { k, v ->
         if (project.hasProperty("" + k)) {
