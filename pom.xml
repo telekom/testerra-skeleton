@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <testerra.version>1.8</testerra.version>
+        <testerra.version>1.9</testerra.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!-- Its highly recommended to normalize your project to Unicode -->
