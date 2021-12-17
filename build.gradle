@@ -4,7 +4,7 @@ compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
 
 ext {
-    testerraVersion = '1.10'
+    testerraVersion = '1.11'
 }
 
 dependencies {
