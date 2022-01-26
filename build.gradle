@@ -1,5 +1,5 @@
 ext {
-    testerraVersion = '2.0-RC-17'
+    testerraVersion = '2-SNAPSHOT'
 }
 
 subprojects {
@@ -12,6 +12,11 @@ subprojects {
     repositories {
         mavenCentral()
         mavenLocal()
+
+        maven {
+            // For Testerra SNAPSHOTS
+            url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+        }
     }
 
     compileJava.options.encoding = 'UTF-8'
