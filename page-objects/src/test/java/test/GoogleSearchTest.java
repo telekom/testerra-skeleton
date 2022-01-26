@@ -1,8 +1,6 @@
 package test;
 
 import eu.tsystems.mms.tic.testframework.pageobjects.InteractiveUiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import eu.tsystems.mms.tic.testframework.testing.PageFactoryProvider;
 import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
 import org.testng.annotations.Test;
