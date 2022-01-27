@@ -20,7 +20,15 @@ This project contains several sub projects as examples.
 
 ## Execution
 
-Open the project in your IDE and run the files under `src/test`.
+Open the project in your IDE and run the files under `src/test` of the respective project.
+
+* *minimal*: The absolute minimal example for performing a Web based test.
+* *layout-check*: Example how to perform layout checks on elements.
+* *page-objects*: Perform tests with page object adapters.
+* *the-internet*: More complex practical examples.
+
+Additional:
+* *inject-factories*: Technical example how to inject custom page factories.
 
 ## Code of Conduct
 

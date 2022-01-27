@@ -10,7 +10,7 @@ public class GoogleSimpleSearchTest extends AbstractGoogleTest implements Locato
 
     @Test()
     public void test_Search() {
-        // Always find displayed elements
+        // Always find displayed elements (optional for Google)
         LOCATE.setThreadLocalConfigurator(Locator::displayed);
 
         UiElementFinder finder = createFinder();
