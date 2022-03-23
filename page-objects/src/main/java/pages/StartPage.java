@@ -28,8 +28,9 @@ public class StartPage extends Page {
         return this;
     }
 
-    public void searchByEnter() {
+    public ResultPage searchByEnter() {
         searchField.sendKeys(Keys.ENTER);
+        return createPage(ResultPage.class);
     }
 
     public void searchByDefaultButton() {

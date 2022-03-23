@@ -18,9 +18,8 @@ public class GoogleSearchTest extends TesterraTest implements PageFactoryProvide
         StartPage startPage = PAGE_FACTORY.createPage(StartPage.class);
 
         startPage.acceptCookies();
-        startPage.type("testerra").searchByEnter();
+        ResultPage resultPage = startPage.type("testerra").searchByEnter();
 
-        ResultPage resultPage = startPage.createPage(ResultPage.class);
         InteractiveUiElement headline = resultPage.getResult().list().first().getHeadline();
         headline.expect().text().contains("Testerra").is(true);
         headline.click();
