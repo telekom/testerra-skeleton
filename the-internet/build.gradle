@@ -1,0 +1,7 @@
+//implementation 'io.testerra:selenoid-connector:1.7'
+
+test {
+    useTestNG() {
+        suites file('src/test/resources/suite.xml')
+    }
+}
