@@ -14,7 +14,7 @@ public class GoogleSimpleSearchTest extends AbstractGoogleTest implements Locato
         LOCATE.setThreadLocalConfigurator(Locator::displayed);
 
         UiElementFinder finder = createFinder();
-        finder.find(By.name("q")).type("Hallo World");
+        finder.find(By.name("q")).type("Hello World");
         finder.find(By.name("btnK")).click();
     }
 }

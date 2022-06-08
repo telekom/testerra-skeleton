@@ -7,28 +7,29 @@ For simplicity, we will use Gradle as build and dependency management tool.
 ## Perquisites
 
 This project is an implementation of the [getting started](http://docs.testerra.io/testerra/2.0-RC-3/index.html#_getting_started) tutorial.
-All you have to do is, to setup an [own selenium server](http://docs.testerra.io/testerra/2.0-RC-3/index.html#_setup_selenium)
+
+**Note:** All you have to do is, to set up an [own selenium server](http://docs.testerra.io/testerra/2.0-RC-3/index.html#_setup_selenium)
 
 ## What this skeleton project offers you
 
-This project contains several sub projects as examples.
+This project contains several subprojects as examples.
 
-- *minimal*: A minimal example for finding elements
-- *page-objects*: A minimal example using the page objects pattern
-- *layout-check*: A simple example how to check layouts.
-- *inject-factories*: Shows how to inject your own page factory
+| Subproject         | Description                                                       |
+|--------------------|-------------------------------------------------------------------|
+| *minimal*          | The absolute minimal example for performing a Web based test.     |
+| *page-objects*     | A minimal example using the page objects pattern                  |
+| *layout-check*     | A simple example how to check layouts.                            |
+| *inject-factories* | Shows how to inject your own page factory as a technical example. |
+| *the-internet*     | More complex practical examples from Testerra 1 skeleton.         |
 
 ## Execution
 
-Open the project in your IDE and run the files under `src/test` of the respective project.
+Navigate to the folder of the subproject and run
 
-* *minimal*: The absolute minimal example for performing a Web based test.
-* *layout-check*: Example how to perform layout checks on elements.
-* *page-objects*: Perform tests with page object adapters.
-* *the-internet*: More complex practical examples.
-
-Additional:
-* *inject-factories*: Technical example how to inject custom page factories.
+````shell
+gradle test
+````
+or open the project in your IDE and run the files under `src/test` of the respective project.
 
 ## Code of Conduct
 

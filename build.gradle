@@ -29,6 +29,9 @@ subprojects {
     }
 
     test {
+
+        useTestNG() {}
+
         testLogging {
             outputs.upToDateWhen { false }
             showStandardStreams = true
