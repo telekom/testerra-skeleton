@@ -1,5 +1,0 @@
-test {
-    useTestNG() {
-        suites file('src/test/resources/AllTests.xml')
-    }
-}

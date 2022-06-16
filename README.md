@@ -1,35 +1,55 @@
-# Testerra Skeletons
+# Testerra 2 Skeleton
 
 This project is a simple skeleton project for [Testerra framework]([https://github.com/telekom/testerra]) addressing basic features,  
 file and directory structure and common best practices to getting you and your project work as fast as possible.  
 For simplicity, we will use Gradle as build and dependency management tool. 
 
+This project uses Testerra 2.
+
 ## Perquisites
 
-This project is an implementation of the [getting started](http://docs.testerra.io/testerra/2.0-RC-3/index.html#_getting_started) tutorial.
+This project is an implementation of the [getting started](http://docs.testerra.io/testerra/2-latest/index.html#_getting_started) tutorial.
 
-**Note:** All you have to do is, to set up an [own selenium server](http://docs.testerra.io/testerra/2.0-RC-3/index.html#_setup_selenium)
+**Note:** All you have to do is, to set up an [own selenium server](http://docs.testerra.io/testerra/2-latest/index.html#_setup_selenium)
 
-## What this skeleton project offers you
-
-This project contains several subprojects as examples.
-
-| Subproject         | Description                                                       |
-|--------------------|-------------------------------------------------------------------|
-| *minimal*          | The absolute minimal example for performing a Web based test.     |
-| *page-objects*     | A minimal example using the page objects pattern                  |
-| *layout-check*     | A simple example how to check layouts.                            |
-| *inject-factories* | Shows how to inject your own page factory as a technical example. |
-| *the-internet*     | More complex practical examples from Testerra 1 skeleton.         |
+## Demo App
+For sample page objects and easy testcases we use https://the-internet.herokuapp.com/ as base url for testing.
 
 ## Execution
 
-Navigate to the folder of the subproject and run
-
-````shell
+You can simply execute the provided tests for the demo app by running following Maven command.
+```bash
 gradle test
-````
+```
+
 or open the project in your IDE and run the files under `src/test` of the respective project.
+
+You will find the Testerra report under `test-report/report-ng/index.html`.
+
+## What this skeleton project offers you
+
+### Page object and GuiElement
+You will see how to use Testerra `Page` objects and work with basic features and selectors of `UiElement`.
+
+### Properties
+This project shows how you can set up a basic `test.properties` file to get things started locally.
+
+### TestNG execution
+You get in touch how to configure a TestNG suite file in Gradle.
+
+### Localization
+To get in touch with localization, this skeleton project provides a simple resource bundle for english language.
+The usage can be seen in some `Page` object classes of this project.
+
+### Fails-Annotation
+The project shows you how to use Testerra's `@Fails` annotation for marking test as expected errors.
+
+### Failure Corridor
+The skeleton shows you how to use `FailureCorridor` annotations and configuration in `test.properties`.
+
+## More demos of Testerra
+
+For more demos of extended Testerra features checkout https://github.com/T-Systems-MMS/testerra-demo.   
 
 ## Code of Conduct
 

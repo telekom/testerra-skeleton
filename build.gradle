@@ -2,46 +2,47 @@ ext {
     testerraVersion = '2.0-RC-21'
 }
 
-subprojects {
 
-    apply plugin: 'java-library'
+apply plugin: 'java-library'
 
-    group 'io.testerra.skeletons'
-    version '2-SNAPSHOT'
+group 'io.testerra.skeletons'
+version '2-SNAPSHOT'
 
-    repositories {
-        mavenCentral()
-        mavenLocal()
+repositories {
+    mavenCentral()
+    mavenLocal()
 
-        maven {
-            // For Testerra SNAPSHOTS
-            url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-        }
-    }
-
-    compileJava.options.encoding = 'UTF-8'
-    compileTestJava.options.encoding = "UTF-8"
-    sourceCompatibility = 8
-
-    dependencies {
-        implementation "io.testerra:driver-ui-desktop:${testerraVersion}"
-        implementation "io.testerra:report-ng:${testerraVersion}"
-    }
-
-    test {
-
-        useTestNG() {}
-
-        testLogging {
-            outputs.upToDateWhen { false }
-            showStandardStreams = true
-        }
-
-        options {
-            systemProperties(System.getProperties())
-        }
-
-        // basically execution returns "GREEN" (framework exits with exit code > 0 if there were failures)
-        ignoreFailures = true
+    maven {
+        // For Testerra SNAPSHOTS
+        url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
     }
 }
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = "UTF-8"
+sourceCompatibility = 8
+
+dependencies {
+    implementation "io.testerra:driver-ui-desktop:${testerraVersion}"
+    implementation "io.testerra:report-ng:${testerraVersion}"
+}
+
+test {
+
+    useTestNG() {
+        suites file('src/test/resources/suite.xml')
+    }
+
+    testLogging {
+        outputs.upToDateWhen { false }
+        showStandardStreams = true
+    }
+
+    options {
+        systemProperties(System.getProperties())
+    }
+
+    // basically execution returns "GREEN" (framework exits with exit code > 0 if there were failures)
+    ignoreFailures = true
+}
+
