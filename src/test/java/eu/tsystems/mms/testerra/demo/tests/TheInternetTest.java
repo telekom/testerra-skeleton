@@ -103,28 +103,28 @@ public class TheInternetTest extends TesterraTest implements WebDriverManagerPro
         final UserModel userJohnSmith = userModelFactory.createJohnSmith();
         final UserModel userNonExisting = userModelFactory.createNonExisting();
 
-        TestStep.begin("1. Init driver");
+        TestStep.begin("Init driver and first page");
         StartPage startPage = PAGE_FACTORY.createPage(StartPage.class);
 
-        TestStep.begin("2. Navigate to tables");
+        TestStep.begin("Navigate to tables");
         TablePage tablePage = startPage.goToTablePage();
 
-        TestStep.begin("3. Assert Last Name column present");
+        TestStep.begin("Assert Last Name column present");
         UiElementList<TablePage.Row> rows = tablePage.getRows();
         TablePage.Row headerRow = rows.first();
         Assert.assertTrue(headerRow.getColumnNames().contains("Last Name"));
 
-        TestStep.begin("4. Get data of first entry");
+        TestStep.begin("Get data of first entry");
         TablePage.Row firstRow = rows.get(1);
         String lastNameBeforeSorting = firstRow.getColumnByName("Last Name").waitFor().text().getActual();
 
-        TestStep.begin("5. Sort by Last Name");
+        TestStep.begin("Sort by Last Name");
         headerRow.getColumnByName("Last Name").click();
 
-        TestStep.begin("6. Assert another data set is now in row 1");
+        TestStep.begin("Assert another data set is now in row 1");
         firstRow.getColumnByName("Last Name").expect().text().isNot(lastNameBeforeSorting);
 
-        TestStep.begin("7. Assert user model shown");
+        TestStep.begin("Assert user model shown");
         Assert.assertTrue(tablePage.isUserShown(userJohnSmith));
         Assert.assertFalse(tablePage.isUserShown(userNonExisting));
     }
@@ -135,14 +135,14 @@ public class TheInternetTest extends TesterraTest implements WebDriverManagerPro
     public void testT04_TableEntryNotPresent() {
 
         final UserModel userNonExisting = userModelFactory.createNonExisting();
-        TestStep.begin("1. Init driver");
 
+        TestStep.begin("Init driver and first page");
         StartPage startPage = PAGE_FACTORY.createPage(StartPage.class);
 
-        TestStep.begin("2. Navigate to tables");
+        TestStep.begin("Navigate to tables");
         TablePage tablePage = startPage.goToTablePage();
 
-        TestStep.begin("3. Assert user shown.");
+        TestStep.begin("Assert user shown.");
         Assert.assertTrue(tablePage.isUserShown(userNonExisting));
     }
 
