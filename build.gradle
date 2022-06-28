@@ -1,7 +1,6 @@
 ext {
-    testerraVersion = '2.0-RC-21'
+    testerraVersion = '2.0'
 }
-
 
 apply plugin: 'java-library'
 
@@ -12,19 +11,23 @@ repositories {
     mavenCentral()
     mavenLocal()
 
-    maven {
-        // For Testerra SNAPSHOTS
-        url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-    }
+    // Uncomment it for Testerra SNAPSHOTS
+//    maven {
+
+//        url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+//    }
 }
 
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
-sourceCompatibility = 8
 
 dependencies {
     implementation "io.testerra:driver-ui-desktop:${testerraVersion}"
     implementation "io.testerra:report-ng:${testerraVersion}"
+}
+
+repositories {
+    mavenCentral()
 }
 
 test {

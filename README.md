@@ -6,6 +6,8 @@ For simplicity, we will use Gradle as build and dependency management tool.
 
 This project uses Testerra 2.
 
+**For a Testerra 1 Skeleton go to https://github.com/telekom/testerra-skeleton/tree/testerra1** 
+
 ## Perquisites
 
 This project is an implementation of the [getting started](http://docs.testerra.io/testerra/2-latest/index.html#_getting_started) tutorial.
