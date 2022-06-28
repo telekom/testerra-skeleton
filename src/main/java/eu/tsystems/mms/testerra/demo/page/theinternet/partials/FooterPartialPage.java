@@ -16,11 +16,10 @@
  */
 package eu.tsystems.mms.testerra.demo.page.theinternet.partials;
 
+import eu.tsystems.mms.tic.testframework.pageobjects.AbstractComponent;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
-import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.Page;
+import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 /**
  * Describe footer, etc.
@@ -30,15 +29,12 @@ import org.openqa.selenium.WebDriver;
  *
  * @author Eric Kubenka
  */
-public class FooterPartialPage extends Page {
+public class FooterPartialPage extends AbstractComponent<FooterPartialPage> {
 
     @Check
-    private GuiElement sectionFooter = new GuiElement(this.getWebDriver(), By.id("page-footer"));
+    private UiElement linkElementalSelenium = find(By.linkText("Elemental Selenium"));
 
-    @Check
-    private GuiElement linkElementalSelenium = sectionFooter.getSubElement(By.linkText("Elemental Selenium"));
-
-    public FooterPartialPage(WebDriver driver) {
-        super(driver);
+    public FooterPartialPage(UiElement rootElement) {
+        super(rootElement);
     }
 }

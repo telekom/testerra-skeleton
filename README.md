@@ -1,49 +1,55 @@
-# Simple Testerra Skeleton
+# Testerra 2 Skeleton
 
 This project is a simple skeleton project for [Testerra framework]([https://github.com/telekom/testerra]) addressing basic features,  
 file and directory structure and common best practices to getting you and your project work as fast as possible.  
-For simplicity, we will use Maven as build and dependency management tool. 
+For simplicity, we will use Gradle as build and dependency management tool. 
 
-## Prerequisites
+This project uses Testerra 2.
 
-This project is an implementation of the [getting started](http://docs.testerra.io/testerra/stable/index.html#_getting_started) tutorial.
-All you have to do is, to setup an [own selenium server](http://docs.testerra.io/testerra/stable/index.html#_setup_selenium)
+## Perquisites
 
-Testerra and all of its components are published at MavenCentral. Make sure you configure your Maven or Gradle to give you access.
+This project is an implementation of the [getting started](http://docs.testerra.io/testerra/2-latest/index.html#_getting_started) tutorial.
+
+**Note:** All you have to do is, to set up an [own selenium server](http://docs.testerra.io/testerra/2-latest/index.html#_setup_selenium)
 
 ## Demo App
 For sample page objects and easy testcases we use https://the-internet.herokuapp.com/ as base url for testing.
 
 ## Execution
+
 You can simply execute the provided tests for the demo app by running following Maven command.
 ```bash
-mvn test -PmySuite
-# or
-gradle test -PmySuite
+gradle test
 ```
-This will execute four simple tests in parallel mode to demonstrate how to use basic components of Testerra. You can see a list of features below.
+
+or open the project in your IDE and run the files under `src/test` of the respective project.
+
+You will find the Testerra report under `test-report/report-ng/index.html`.
 
 ## What this skeleton project offers you
 
 ### Page object and GuiElement
-You will see how to use Testerra `Page` objects and work with basic features and selectors of `GuiElement`. 
+You will see how to use Testerra `Page` objects and work with basic features and selectors of `UiElement`.
 
 ### Properties
 This project shows how you can set up a basic `test.properties` file to get things started locally.
 
 ### TestNG execution
-With a simple Maven profile called `mySuite` you can run all tests from `TheInternetTest` class with 3 parallel browser sessions. 
-You get in touch how to configure a TestNG suite file.
+You get in touch how to configure a TestNG suite file in Gradle.
 
 ### Localization
 To get in touch with localization, this skeleton project provides a simple resource bundle for english language.
-The usage can be seen in some `Page` object classes of this project. 
+The usage can be seen in some `Page` object classes of this project.
 
 ### Fails-Annotation
-The project shows you how to use Testerras `@Fails` annotation for marking test as expected errors.
+The project shows you how to use Testerra's `@Fails` annotation for marking test as expected errors.
 
 ### Failure Corridor
 The skeleton shows you how to use `FailureCorridor` annotations and configuration in `test.properties`.
+
+## More demos of Testerra
+
+For more demos of extended Testerra features checkout https://github.com/T-Systems-MMS/testerra-demo.   
 
 ## Code of Conduct
 
@@ -80,5 +86,3 @@ Licensed under the **Apache License, Version 2.0** (the "License"); you may not 
 You may obtain a copy of the License at https://www.apache.org/licenses/LICENSE-2.0.
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the [LICENSE](./LICENSE) for the specific language governing permissions and limitations under the License.
-
-

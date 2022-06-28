@@ -22,6 +22,8 @@ import eu.tsystems.mms.tic.testframework.pageobjects.Check;
 import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.Locate;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
+import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
+import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
 import eu.tsystems.mms.tic.testframework.utils.MouseActions;
 import org.openqa.selenium.By;
@@ -37,28 +39,27 @@ import org.openqa.selenium.WebDriver;
  */
 public class DragAndDropPage extends Page {
 
-    private FooterPartialPage footer = PageFactory.create(FooterPartialPage.class, this.getWebDriver());
+    private FooterPartialPage footer = createComponent(FooterPartialPage.class, find(By.id("page-footer")));
 
     @Check
-    private GuiElement columnAWrapper = new GuiElement(this.getWebDriver(), By.id("column-a"));
+    private UiElement columnAWrapper = find(By.id("column-a"));
     @Check
-    private GuiElement columnBWrapper = new GuiElement(this.getWebDriver(), By.id("column-b"));
+    private UiElement columnBWrapper = find(By.id("column-b"));
 
     public DragAndDropPage(WebDriver driver) {
         super(driver);
     }
 
     public DragAndDropPage doDragAndDrop() {
-        MouseActions.dragAndDropJS(columnAWrapper, columnBWrapper);
+        new MouseActions().dragAndDropJs(columnAWrapper, columnBWrapper);
         return this;
     }
 
-    public String getColumnAText() {
-        return this.columnAWrapper.getText();
+    public TestableUiElement getColumnA() {
+        return this.columnAWrapper;
     }
 
-    public String getColumnBText() {
-
-        return this.columnBWrapper.getText();
+    public TestableUiElement getColumnB() {
+        return this.columnBWrapper;
     }
 }

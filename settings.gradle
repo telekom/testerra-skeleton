@@ -1,0 +1,4 @@
+rootProject.name = 'testerra-skeletons'
+
+// Add this for local development
+//includeBuild "../testerra"

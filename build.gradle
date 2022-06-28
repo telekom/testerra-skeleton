@@ -1,11 +1,26 @@
+ext {
+    testerraVersion = '2.0-RC-21'
+}
+
+
 apply plugin: 'java-library'
+
+group 'io.testerra.skeletons'
+version '2-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+    maven {
+        // For Testerra SNAPSHOTS
+        url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
 
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
-
-ext {
-    testerraVersion = '1.12'
-}
+sourceCompatibility = 8
 
 dependencies {
     implementation "io.testerra:driver-ui-desktop:${testerraVersion}"
@@ -13,32 +28,9 @@ dependencies {
 }
 
 test {
-    // define as
-    //      key: profile name
-    //      value: testng suite xml filename
-    def profiles = [
-            "mySuite": "suite.xml",
-            "myFoo": "bar.xml"
-    ]
-
-    // create suite def
-    def suiteFiles = []
-    profiles.each { k, v ->
-        if (project.hasProperty("" + k)) {
-            def f = 'src/test/resources/' + v
-            suiteFiles << f
-        }
-    }
-
-    /*if (suiteFiles.size() == 0) {
-        throw new Exception("No Suites defined, run gradle test with -P[suite], available suites are: " + profiles)
-    }
-    else {
-        println "Suites: " + suiteFiles
-    }*/
 
     useTestNG() {
-        suites(suiteFiles as String[])
+        suites file('src/test/resources/suite.xml')
     }
 
     testLogging {
@@ -53,3 +45,4 @@ test {
     // basically execution returns "GREEN" (framework exits with exit code > 0 if there were failures)
     ignoreFailures = true
 }
+

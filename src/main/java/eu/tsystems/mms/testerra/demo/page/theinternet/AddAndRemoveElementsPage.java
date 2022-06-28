@@ -19,9 +19,9 @@ package eu.tsystems.mms.testerra.demo.page.theinternet;
 
 import eu.tsystems.mms.tic.testframework.l10n.SimpleLocalization;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
-import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
-import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
+import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
+import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -36,13 +36,13 @@ import org.openqa.selenium.WebDriver;
 public class AddAndRemoveElementsPage extends Page {
 
     @Check
-    private GuiElement buttonAddElement = new GuiElement(this.getWebDriver(), By.xpath("//button[text()='" + SimpleLocalization.getText("BUTTON_ADD_ELEMENT") + "']"));
+    private UiElement buttonAddElement = find(By.xpath("//button[text()='" + SimpleLocalization.getText("BUTTON_ADD_ELEMENT") + "']"));
 
     @Check
-    private GuiElement sectionElements = new GuiElement(this.getWebDriver(), By.id("elements"));
+    private UiElement sectionElements = find(By.id("elements"));
 
     // No Check here, because on initial load, list is empty.
-    private GuiElement deleteElementButtonList = sectionElements.getSubElement(By.xpath("//button[text()='" + SimpleLocalization.getText("BUTTON_DELETE") + "']"));
+    private UiElement deleteElementButtonList = sectionElements.find(By.xpath("//button[text()='" + SimpleLocalization.getText("BUTTON_DELETE") + "']"));
 
     /**
      * Constructor for existing sessions.
@@ -61,19 +61,19 @@ public class AddAndRemoveElementsPage extends Page {
     public AddAndRemoveElementsPage doAddElement() {
 
         this.buttonAddElement.click();
-        return PageFactory.create(AddAndRemoveElementsPage.class, this.getWebDriver());
+        return createPage(AddAndRemoveElementsPage.class);
     }
 
-    public int getElementCount() {
-        return this.deleteElementButtonList.getList().size();
+    public TestableUiElement getDeleteElementButton() {
+        return this.deleteElementButtonList;
     }
 
     public AddAndRemoveElementsPage doRemoveElement() {
 
-        if (this.deleteElementButtonList.isDisplayed()) {
+        if (this.deleteElementButtonList.waitFor().displayed(true)) {
             this.deleteElementButtonList.click();
         }
 
-        return PageFactory.create(AddAndRemoveElementsPage.class, this.getWebDriver());
+        return createPage(AddAndRemoveElementsPage.class);
     }
 }

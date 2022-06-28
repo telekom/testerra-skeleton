@@ -1,13 +1,12 @@
 ## Directory-based project format
 .idea/
 .gradle/
-gradle/
 gradlew
 gradlew.bat
 
 target/
 build/
-test-report/
+test-report
 gradle
 
 # if you remove the above rule, at least ignore user-specific stuff:

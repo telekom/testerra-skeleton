@@ -18,9 +18,8 @@ package eu.tsystems.mms.testerra.demo.page.theinternet;
 
 import eu.tsystems.mms.testerra.demo.page.theinternet.partials.FooterPartialPage;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
-import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
-import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
+import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -34,18 +33,18 @@ import org.openqa.selenium.WebDriver;
  */
 public class StartPage extends Page {
 
-    private FooterPartialPage footer = PageFactory.create(FooterPartialPage.class, this.getWebDriver());
+    private FooterPartialPage footer = createComponent(FooterPartialPage.class, find(By.id("page-footer")));
 
     @Check
-    private GuiElement headerElement = new GuiElement(this.getWebDriver(), By.cssSelector("h1.heading"));
+    private UiElement headerElement = find(By.cssSelector("h1.heading"));
 
     @Check
-    private GuiElement navLinkDragAndDrop = new GuiElement(this.getWebDriver(), By.linkText("Drag and Drop"));
+    private UiElement navLinkDragAndDrop = find(By.linkText("Drag and Drop"));
 
     @Check
-    private GuiElement navLinkAddAndRemoveElements = new GuiElement(this.getWebDriver(), By.linkText("Add/Remove Elements"));
+    private UiElement navLinkAddAndRemoveElements = find(By.linkText("Add/Remove Elements"));
     @Check
-    private GuiElement navLinkTables = new GuiElement(this.getWebDriver(), By.linkText("Sortable Data Tables"));
+    private UiElement navLinkTables = find(By.linkText("Sortable Data Tables"));
 
     public StartPage(WebDriver driver) {
         super(driver);
@@ -54,19 +53,19 @@ public class StartPage extends Page {
     public DragAndDropPage goToDragAndDropPage() {
 
         this.navLinkDragAndDrop.click();
-        return PageFactory.create(DragAndDropPage.class, this.getWebDriver());
+        return createPage(DragAndDropPage.class);
 
     }
 
     public AddAndRemoveElementsPage goToAddAndRemoveElementsPage() {
 
         this.navLinkAddAndRemoveElements.click();
-        return PageFactory.create(AddAndRemoveElementsPage.class, this.getWebDriver());
+        return createPage(AddAndRemoveElementsPage.class);
     }
 
     public TablePage goToTablePage() {
 
         this.navLinkTables.click();
-        return PageFactory.create(TablePage.class, this.getWebDriver());
+        return createPage(TablePage.class);
     }
 }
