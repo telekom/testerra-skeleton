@@ -1,7 +1,7 @@
 /*
  * Testerra
  *
- * (C) 2021, Vladislav Koriakov, T-Systems Multimedia Solutions GmbH, Deutsche Telekom AG
+ * (C) 2022, Martin Großmann, T-Systems Multimedia Solutions GmbH, Deutsche Telekom AG
  *
  * Deutsche Telekom AG and all other contributors /
  * copyright owners license this file to you under the Apache
@@ -23,6 +23,7 @@ package eu.tsystems.mms.testerra.demo;
 
 import eu.tsystems.mms.tic.testframework.constants.Browsers;
 import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
+import eu.tsystems.mms.tic.testframework.testing.WebDriverManagerProvider;
 import eu.tsystems.mms.tic.testframework.useragents.ChromeConfig;
 import eu.tsystems.mms.tic.testframework.webdrivermanager.WebDriverManager;
 import eu.tsystems.mms.tic.testframework.webdrivermanager.WebDriverProxyUtils;
@@ -31,13 +32,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.testng.annotations.BeforeSuite;
 
-public class AbstractTest extends TesterraTest {
+public class AbstractTest extends TesterraTest implements WebDriverManagerProvider{
     /**
-     * http://docs.testerra.io/testerra/stable/index.html#_chrome_in_a_container
+     * https://tapas-docs.s3.eu-central-1.amazonaws.com/testerra/latest/index.html#_chrome_in_a_container
      */
     @BeforeSuite
     public void configureChromeOptions() {
-        WebDriverManager.setUserAgentConfig(Browsers.chromeHeadless, new ChromeConfig() {
+        WEB_DRIVER_MANAGER.setUserAgentConfig(Browsers.chromeHeadless, new ChromeConfig() {
             @Override
             public void configure(ChromeOptions options) {
                 options.addArguments("--disable-dev-shm-usage");
@@ -45,9 +46,4 @@ public class AbstractTest extends TesterraTest {
         });
     }
 
-    @BeforeSuite
-    public void setupProxy() {
-        Proxy proxy = new WebDriverProxyUtils().getDefaultHttpProxy();
-        WebDriverManager.setGlobalExtraCapability(CapabilityType.PROXY, proxy);
-    }
 }
