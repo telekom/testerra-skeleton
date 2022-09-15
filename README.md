@@ -6,7 +6,9 @@ For simplicity, we will use Gradle as build and dependency management tool.
 
 This project uses Testerra 2.
 
-**For a Testerra 1 Skeleton go to https://github.com/telekom/testerra-skeleton/tree/testerra1** 
+For more demos of extended Testerra features checkout https://github.com/T-Systems-MMS/testerra-demo.
+
+Note: *For a Testerra 1 Skeleton go to https://github.com/telekom/testerra-skeleton/tree/testerra1* 
 
 ## Perquisites
 
@@ -48,10 +50,6 @@ The project shows you how to use Testerra's `@Fails` annotation for marking test
 
 ### Failure Corridor
 The skeleton shows you how to use `FailureCorridor` annotations and configuration in `test.properties`.
-
-## More demos of Testerra
-
-For more demos of extended Testerra features checkout https://github.com/T-Systems-MMS/testerra-demo.   
 
 ## Code of Conduct
 
