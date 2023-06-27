@@ -1,5 +1,5 @@
 ext {
-    testerraVersion = '2.2'
+    testerraVersion = '2.3'
 }
 
 apply plugin: 'java-library'
@@ -9,7 +9,6 @@ version '2-SNAPSHOT'
 
 repositories {
     mavenCentral()
-    mavenLocal()
 
     // Uncomment it for Testerra SNAPSHOTS
 //    maven {
