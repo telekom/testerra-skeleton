@@ -1,5 +1,14 @@
 # Testerra 2 Skeleton
 
+<p align="center">
+    <img src="images/s_Testerra_Logo_0256px.png" alt="Testerra logo">
+</p>
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./images/s_Testerra_Logo_0256px.png">
+  <img alt="Text changing depending on mode. Light: 'So light!' Dark: 'So dark!'" src="./images/w_Testerra_Logo_0256px.png">
+</picture>
+
 This project is a simple skeleton project for [Testerra framework]([https://github.com/telekom/testerra]) addressing basic features,  
 file and directory structure and common best practices to getting you and your project work as fast as possible.  
 For simplicity, we will use Gradle as build and dependency management tool. 
