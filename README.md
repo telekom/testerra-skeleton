@@ -1,4 +1,4 @@
-# Testerra 2 Skeleton
+# Testerra Skeleton
 
 <p align="center">
     <picture>
@@ -11,11 +11,8 @@ This project is a simple skeleton project for [Testerra framework]([https://gith
 file and directory structure and common best practices to getting you and your project work as fast as possible.  
 For simplicity, we will use Gradle as build and dependency management tool. 
 
-This project uses Testerra 2.
+For more demos of extended Testerra features checkout https://github.com/telekom-mms/testerra-demo.
 
-For more demos of extended Testerra features checkout https://github.com/T-Systems-MMS/testerra-demo.
-
-Note: *For a Testerra 1 Skeleton go to https://github.com/telekom/testerra-skeleton/tree/testerra1* 
 
 ## Perquisites
 
