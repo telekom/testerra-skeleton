@@ -1,9 +1,9 @@
 # Testerra 2 Skeleton
 
-<p>
+<p align="center">
     <picture>
         <source media="(prefers-color-scheme: light)" srcset="./images/s_Testerra_Logo_0256px.png">
-        <img style="text-align:center;" alt="Text changing depending on mode. Light: 'So light!' Dark: 'So dark!'" src="./images/w_Testerra_Logo_0256px.png">
+        <img alt="Text changing depending on mode. Light: 'So light!' Dark: 'So dark!'" src="./images/w_Testerra_Logo_0256px.png">
     </picture>
 </p>
 
