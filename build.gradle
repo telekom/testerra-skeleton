@@ -1,11 +1,14 @@
-ext {
-    testerraVersion = '2.7'
+plugins {
+    id 'java'
 }
-
-apply plugin: 'java-library'
 
 group 'io.testerra.skeletons'
 version '2-SNAPSHOT'
+
+ext {
+    testerraVersion = '2.8'
+}
+
 
 repositories {
     mavenCentral()
@@ -20,8 +23,10 @@ repositories {
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
 
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
 dependencies {
     implementation "io.testerra:driver-ui-desktop:${testerraVersion}"
