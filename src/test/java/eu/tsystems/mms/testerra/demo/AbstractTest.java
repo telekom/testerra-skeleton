@@ -25,7 +25,7 @@ import eu.tsystems.mms.tic.testframework.constants.Browsers;
 import eu.tsystems.mms.tic.testframework.testing.TesterraTest;
 import eu.tsystems.mms.tic.testframework.testing.WebDriverManagerProvider;
 import eu.tsystems.mms.tic.testframework.useragents.ChromeConfig;
-import org.openqa.selenium.chrome.ChromeOptions;
+import eu.tsystems.mms.tic.testframework.useragents.FirefoxConfig;
 import org.testng.annotations.BeforeSuite;
 
 public class AbstractTest extends TesterraTest implements WebDriverManagerProvider {
@@ -33,11 +33,12 @@ public class AbstractTest extends TesterraTest implements WebDriverManagerProvid
     @BeforeSuite
     public void configureChromeOptions() {
 
-        WEB_DRIVER_MANAGER.setUserAgentConfig(Browsers.chromeHeadless, new ChromeConfig() {
-            @Override
-            public void configure(ChromeOptions options) {
-                options.addArguments("--disable-dev-shm-usage");
-            }
+        WEB_DRIVER_MANAGER.setUserAgentConfig(Browsers.chrome, (ChromeConfig) options -> {
+            options.setAcceptInsecureCerts(true);
+        });
+
+        WEB_DRIVER_MANAGER.setUserAgentConfig(Browsers.firefox, (FirefoxConfig) options -> {
+            options.setAcceptInsecureCerts(true);
         });
 
     }
