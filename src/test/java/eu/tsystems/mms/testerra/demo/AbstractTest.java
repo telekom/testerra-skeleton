@@ -37,6 +37,10 @@ public class AbstractTest extends TesterraTest implements WebDriverManagerProvid
             options.setAcceptInsecureCerts(true);
         });
 
+        WEB_DRIVER_MANAGER.setUserAgentConfig(Browsers.chromeHeadless, (ChromeConfig) options -> {
+            options.setAcceptInsecureCerts(true);
+        });
+
         WEB_DRIVER_MANAGER.setUserAgentConfig(Browsers.firefox, (FirefoxConfig) options -> {
             options.setAcceptInsecureCerts(true);
         });
