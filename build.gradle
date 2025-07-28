@@ -6,7 +6,7 @@ group 'io.testerra.skeletons'
 version '2-SNAPSHOT'
 
 ext {
-    testerraVersion = '2.10'
+    testerraVersion = '2.11'
 }
 
 
@@ -16,7 +16,7 @@ repositories {
     // Uncomment it for Testerra SNAPSHOTS
 //    maven {
 
-//        url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+//        url "https://central.sonatype.com/repository/maven-snapshots/"
 //    }
 }
 
