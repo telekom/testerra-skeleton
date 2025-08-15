@@ -24,8 +24,8 @@ compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = "UTF-8"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 dependencies {
@@ -40,7 +40,7 @@ repositories {
 test {
 
     useTestNG() {
-        suites file('src/test/resources/suite.xml')
+        suites('src/test/resources/suite.xml')
     }
 
     testLogging {
