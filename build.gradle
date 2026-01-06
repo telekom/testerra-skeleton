@@ -6,7 +6,7 @@ group 'io.testerra.skeletons'
 version '2-SNAPSHOT'
 
 ext {
-    testerraVersion = '2.11'
+    testerraVersion = '2.12'
 }
 
 
