@@ -13,12 +13,7 @@ For simplicity, we will use Gradle as build and dependency management tool.
 
 For more demos of extended Testerra features checkout https://github.com/telekom-mms/testerra-demo.
 
-
-## Perquisites
-
 This project is an implementation of the [getting started](http://docs.testerra.io/testerra/2-latest/index.html#_getting_started) tutorial.
-
-**Note:** All you have to do is, to set up an [own selenium server](http://docs.testerra.io/testerra/2-latest/index.html#_setup_selenium)
 
 ## Demo App
 For sample page objects and easy testcases we use https://the-internet.herokuapp.com/ as base url for testing.
