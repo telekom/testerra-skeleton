@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package eu.tsystems.mms.testerra.demo;
+package com.telekom.mms.testerra.demo;
 
 import eu.tsystems.mms.tic.testframework.constants.Browsers;
 import eu.tsystems.mms.tic.testframework.testing.TesterraTest;

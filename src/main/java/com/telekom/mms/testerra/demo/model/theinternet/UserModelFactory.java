@@ -14,27 +14,35 @@
  * Contributors:
  *     Eric Kubenka
  */
-package eu.tsystems.mms.testerra.demo.page.theinternet.partials;
 
-import eu.tsystems.mms.tic.testframework.pageobjects.AbstractComponent;
-import eu.tsystems.mms.tic.testframework.pageobjects.Check;
-import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
-import org.openqa.selenium.By;
+package com.telekom.mms.testerra.demo.model.theinternet;
 
 /**
- * Describe footer, etc.
+ * Creates predefined userobjects
  * <p>
  * Date: 14.05.2020
- * Time: 12:53
+ * Time: 13:53
  *
  * @author Eric Kubenka
  */
-public class FooterPartialPage extends AbstractComponent<FooterPartialPage> {
+public class UserModelFactory {
 
-    @Check
-    private UiElement linkElementalSelenium = find(By.linkText("Elemental Selenium"));
+    public UserModel createJohnSmith() {
 
-    public FooterPartialPage(UiElement rootElement) {
-        super(rootElement);
+        final UserModel userModel = new UserModel();
+        userModel.setLastName("Smith");
+        userModel.setFirstName("John");
+
+        return userModel;
     }
+
+    public UserModel createNonExisting() {
+
+        final UserModel userModel = new UserModel();
+        userModel.setLastName("Lucas");
+        userModel.setFirstName("John");
+
+        return userModel;
+    }
+
 }

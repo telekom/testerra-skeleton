@@ -14,58 +14,49 @@
  * Contributors:
  *     Eric Kubenka
  */
-package eu.tsystems.mms.testerra.demo.page.theinternet;
 
-import eu.tsystems.mms.testerra.demo.page.theinternet.partials.FooterPartialPage;
+package com.telekom.mms.testerra.demo.page.theinternet;
+
+import com.telekom.mms.testerra.demo.page.theinternet.partials.FooterPartialPage;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
+import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
+import eu.tsystems.mms.tic.testframework.utils.MouseActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
- * Sample start page of the-internet.herokuapp.com
+ * Represtents https://the-internet.herokuapp.com/drag_and_drop
  * <p>
  * Date: 14.05.2020
- * Time: 12:51
+ * Time: 12:58
  *
  * @author Eric Kubenka
  */
-public class StartPage extends Page {
+public class DragAndDropPage extends Page {
 
     private FooterPartialPage footer = createComponent(FooterPartialPage.class, find(By.id("page-footer")));
 
     @Check
-    private UiElement headerElement = find(By.cssSelector("h1.heading"));
-
+    private UiElement columnAWrapper = find(By.id("column-a"));
     @Check
-    private UiElement navLinkDragAndDrop = find(By.linkText("Drag and Drop"));
+    private UiElement columnBWrapper = find(By.id("column-b"));
 
-    @Check
-    private UiElement navLinkAddAndRemoveElements = find(By.linkText("Add/Remove Elements"));
-    @Check
-    private UiElement navLinkTables = find(By.linkText("Sortable Data Tables"));
-
-    public StartPage(WebDriver driver) {
+    public DragAndDropPage(WebDriver driver) {
         super(driver);
     }
 
-    public DragAndDropPage goToDragAndDropPage() {
-
-        this.navLinkDragAndDrop.click();
-        return createPage(DragAndDropPage.class);
-
+    public DragAndDropPage doDragAndDrop() {
+        new MouseActions().dragAndDropJs(columnAWrapper, columnBWrapper);
+        return this;
     }
 
-    public AddAndRemoveElementsPage goToAddAndRemoveElementsPage() {
-
-        this.navLinkAddAndRemoveElements.click();
-        return createPage(AddAndRemoveElementsPage.class);
+    public TestableUiElement getColumnA() {
+        return this.columnAWrapper;
     }
 
-    public TablePage goToTablePage() {
-
-        this.navLinkTables.click();
-        return createPage(TablePage.class);
+    public TestableUiElement getColumnB() {
+        return this.columnBWrapper;
     }
 }

@@ -2,7 +2,7 @@
 <suite name="Suite1" verbose="1" thread-count="3" configfailurepolicy="continue" parallel="methods">
     <test name="Test1" parallel="methods">
         <classes>
-            <class name="eu.tsystems.mms.testerra.demo.tests.TheInternetTest"/>
+            <class name="com.telekom.mms.testerra.demo.tests.TheInternetTest"/>
         </classes>
     </test>
 </suite>

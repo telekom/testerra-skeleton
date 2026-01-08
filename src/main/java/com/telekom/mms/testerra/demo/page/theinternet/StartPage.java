@@ -14,52 +14,58 @@
  * Contributors:
  *     Eric Kubenka
  */
+package com.telekom.mms.testerra.demo.page.theinternet;
 
-package eu.tsystems.mms.testerra.demo.page.theinternet;
-
-import eu.tsystems.mms.testerra.demo.page.theinternet.partials.FooterPartialPage;
+import com.telekom.mms.testerra.demo.page.theinternet.partials.FooterPartialPage;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
-import eu.tsystems.mms.tic.testframework.pageobjects.GuiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.Locate;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;
-import eu.tsystems.mms.tic.testframework.pageobjects.TestableUiElement;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElement;
-import eu.tsystems.mms.tic.testframework.pageobjects.factory.PageFactory;
-import eu.tsystems.mms.tic.testframework.utils.MouseActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
- * Represtents https://the-internet.herokuapp.com/drag_and_drop
+ * Sample start page of the-internet.herokuapp.com
  * <p>
  * Date: 14.05.2020
- * Time: 12:58
+ * Time: 12:51
  *
  * @author Eric Kubenka
  */
-public class DragAndDropPage extends Page {
+public class StartPage extends Page {
 
     private FooterPartialPage footer = createComponent(FooterPartialPage.class, find(By.id("page-footer")));
 
     @Check
-    private UiElement columnAWrapper = find(By.id("column-a"));
-    @Check
-    private UiElement columnBWrapper = find(By.id("column-b"));
+    private UiElement headerElement = find(By.cssSelector("h1.heading"));
 
-    public DragAndDropPage(WebDriver driver) {
+    @Check
+    private UiElement navLinkDragAndDrop = find(By.linkText("Drag and Drop"));
+
+    @Check
+    private UiElement navLinkAddAndRemoveElements = find(By.linkText("Add/Remove Elements"));
+    @Check
+    private UiElement navLinkTables = find(By.linkText("Sortable Data Tables"));
+
+    public StartPage(WebDriver driver) {
         super(driver);
     }
 
-    public DragAndDropPage doDragAndDrop() {
-        new MouseActions().dragAndDropJs(columnAWrapper, columnBWrapper);
-        return this;
+    public DragAndDropPage goToDragAndDropPage() {
+
+        this.navLinkDragAndDrop.click();
+        return createPage(DragAndDropPage.class);
+
     }
 
-    public TestableUiElement getColumnA() {
-        return this.columnAWrapper;
+    public AddAndRemoveElementsPage goToAddAndRemoveElementsPage() {
+
+        this.navLinkAddAndRemoveElements.click();
+        return createPage(AddAndRemoveElementsPage.class);
     }
 
-    public TestableUiElement getColumnB() {
-        return this.columnBWrapper;
+    public TablePage goToTablePage() {
+
+        this.navLinkTables.click();
+        return createPage(TablePage.class);
     }
 }

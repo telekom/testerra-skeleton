@@ -15,7 +15,7 @@
  *     Eric Kubenka
  */
 
-package eu.tsystems.mms.testerra.demo.page.theinternet;
+package com.telekom.mms.testerra.demo.page.theinternet;
 
 import eu.tsystems.mms.tic.testframework.l10n.SimpleLocalization;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;

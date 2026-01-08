@@ -15,10 +15,10 @@
  *     Eric Kubenka
  */
 
-package eu.tsystems.mms.testerra.demo.page.theinternet;
+package com.telekom.mms.testerra.demo.page.theinternet;
 
-import eu.tsystems.mms.testerra.demo.model.theinternet.UserModel;
-import eu.tsystems.mms.testerra.demo.page.theinternet.partials.FooterPartialPage;
+import com.telekom.mms.testerra.demo.model.theinternet.UserModel;
+import com.telekom.mms.testerra.demo.page.theinternet.partials.FooterPartialPage;
 import eu.tsystems.mms.tic.testframework.pageobjects.AbstractComponent;
 import eu.tsystems.mms.tic.testframework.pageobjects.Check;
 import eu.tsystems.mms.tic.testframework.pageobjects.Page;

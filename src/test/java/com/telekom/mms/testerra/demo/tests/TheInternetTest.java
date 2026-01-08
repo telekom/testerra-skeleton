@@ -18,15 +18,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package eu.tsystems.mms.testerra.demo.tests;
+package com.telekom.mms.testerra.demo.tests;
 
-import eu.tsystems.mms.testerra.demo.AbstractTest;
-import eu.tsystems.mms.testerra.demo.model.theinternet.UserModel;
-import eu.tsystems.mms.testerra.demo.model.theinternet.UserModelFactory;
-import eu.tsystems.mms.testerra.demo.page.theinternet.AddAndRemoveElementsPage;
-import eu.tsystems.mms.testerra.demo.page.theinternet.DragAndDropPage;
-import eu.tsystems.mms.testerra.demo.page.theinternet.StartPage;
-import eu.tsystems.mms.testerra.demo.page.theinternet.TablePage;
+import com.telekom.mms.testerra.demo.AbstractTest;
+import com.telekom.mms.testerra.demo.model.theinternet.UserModel;
+import com.telekom.mms.testerra.demo.model.theinternet.UserModelFactory;
+import com.telekom.mms.testerra.demo.page.theinternet.AddAndRemoveElementsPage;
+import com.telekom.mms.testerra.demo.page.theinternet.DragAndDropPage;
+import com.telekom.mms.testerra.demo.page.theinternet.StartPage;
+import com.telekom.mms.testerra.demo.page.theinternet.TablePage;
 import eu.tsystems.mms.tic.testframework.annotations.Fails;
 import eu.tsystems.mms.tic.testframework.pageobjects.UiElementList;
 import eu.tsystems.mms.tic.testframework.report.FailureCorridor;

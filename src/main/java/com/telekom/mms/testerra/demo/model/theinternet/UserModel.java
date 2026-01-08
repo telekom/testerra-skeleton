@@ -15,7 +15,7 @@
  *     Eric Kubenka
  */
 
-package eu.tsystems.mms.testerra.demo.model.theinternet;
+package com.telekom.mms.testerra.demo.model.theinternet;
 
 /**
  * Describes Users  for UI verifications
