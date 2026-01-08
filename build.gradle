@@ -20,21 +20,19 @@ repositories {
 //    }
 }
 
-compileJava.options.encoding = 'UTF-8'
-compileTestJava.options.encoding = "UTF-8"
-
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 dependencies {
     implementation "io.testerra:driver-ui-desktop:${testerraVersion}"
     implementation "io.testerra:report-ng:${testerraVersion}"
-}
-
-repositories {
-    mavenCentral()
 }
 
 test {
